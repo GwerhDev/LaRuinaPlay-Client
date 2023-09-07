@@ -1,6 +1,5 @@
 import s from './PlayList.module.css';
 import React, {useEffect} from 'react';
-import RequestProfile from '../../admin/RequestProfile/RequestProfile';
 import { lists } from '../../../assets/audio/consts';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUrlPlayer, getItemList, getAllPlaylist} from '../../../middlewares/redux/actions';
@@ -110,9 +109,6 @@ export const PlayList = () => {
             </div>
           </div>
         </ul>
-      </div>
-      <div>
-        <RequestProfile/>
       </div>
     </div>
   )

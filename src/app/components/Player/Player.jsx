@@ -1,4 +1,4 @@
-import s from './Playerlist.module.css';
+import s from './Player.module.css';
 import AudioPlayer from 'react-h5-audio-player';
 
 import { useDispatch } from 'react-redux'
