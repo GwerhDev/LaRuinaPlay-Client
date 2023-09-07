@@ -1,7 +1,13 @@
-import React from 'react'
+import { Navigator } from "../Navigator/Navigator"
 
 export const Viewer = () => {
   return (
-    <div>Viewer</div>
+    <section className="section-container">
+      <div className="primary-container">
+        <Navigator/>
+        <div className="main-section">
+        </div> 
+      </div>
+    </section>
   )
 }

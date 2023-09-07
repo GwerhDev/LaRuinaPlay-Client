@@ -6,6 +6,7 @@ import Browser from '../pages/Browser';
 import Login from '../pages/Login';
 
 import { Player } from '../components/Player/Player';
+import { Register } from '../components/Register/Register';
 
 function Router() {
   const url = useSelector(state=>state.urlPlayer)
@@ -28,6 +29,9 @@ function Router() {
             </Route>
             <Route exact path='/playlist'>
               <Browser component={"playlist"} />
+            </Route>
+            <Route exact path='/register'>
+              <Register/>
             </Route>
             <Route exact path='/login'>
               <Login/>

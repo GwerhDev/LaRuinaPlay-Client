@@ -46,10 +46,8 @@ export const MyLibrary = () => {
                 return(
                   <li 
                     key={index} 
-                    // onClick={()=>{return dispatch(getItemList(e))}}
                     className={s.liPlaylistsNames}>
                     <button 
-                      // onClick={()=>{return dispatch(getItemList(e))}}
                       className={s.btnPlaylistNames}>
                       <h2 className={s.title}>{e.title}</h2>
                     </button>
@@ -59,10 +57,8 @@ export const MyLibrary = () => {
             }
           </ul>
           <li  
-            // onClick={()=>{return dispatch(getItemList(e))}}
             className={s.liPlaylistsNames}>
             <button 
-              // onClick={()=>{return dispatch(getItemList(e))}}
               className={s.btnCreateList}>
               <h2 className={s.title}>Crear una lista</h2>
             </button>
