@@ -24,12 +24,6 @@ import {
     GET_YT_SUBSCRIBERS
 } from "../../misc";
 
-import iconYT from '../../../assets/images/yt-icon.png'
-import iconSpty from '../../../assets/images/spty-icon.png'
-import iconDrive from '../../../assets/images/drive-icon.png'
-import iconWeb from '../../../assets/images/web-icon.png'
-import iconDescarga from '../../../assets/images/descarga-icon.png'
-
 const initialState = {
 
     /*----------------Admin----------------*/
@@ -41,102 +35,13 @@ const initialState = {
     /*----------------Media----------------*/
     allUserLikes: [],
     ytPlayerState: '',
-    typeMediaList:
-    {
-        musica:
-        {
-            idYT: { url: '', img: iconYT },
-            idSpoty: { url: '', img: iconSpty },
-            idDrive: { url: '', img: iconDrive }
-        },
-        serie:
-        {
-            idYT: { url: '', img: iconYT },
-            idSpoty: { url: '', img: iconSpty },
-            idDrive: { url: '', img: iconDrive },
-        },
-        app:
-        {
-            urlWeb: { url: '', img: iconWeb },
-            idDrive: { url: '', img: iconDrive },
-            urlDownload: { url: '', img: iconDescarga },
-        },
-        libro:
-        {
-            urlWeb: { url: '', img: iconWeb },
-            idDrive: { url: '', img: iconDrive },
-            urlDownload: { url: '', img: iconDescarga },
-        }
-    },
-    mediaList: [
-        {
-            id: '',
-            idMedia: [''],
-            mediaType: [''],
-            title: [''],
-            artist: [''],
-            tag: [''],
-            visorImage: [''],
-            sliderImage: [''],
-            icon: [''],
-            categories: [''],
-            actionButton: [''],
-            info: [''],
-            genre: ['']
-        }
-    ],
-    visorList: [
-        {
-            id: '',
-            idMedia: [''],
-            mediaType: [''],
-            title: [''],
-            artist: [''],
-            tag: [''],
-            visorImage: [''],
-            sliderImage: [''],
-            icon: [''],
-            categories: [''],
-            actionButton: [''],
-            info: [''],
-            genre: ['']
-        }
-    ],
-    nextVisor: false,
-    infoDetailViewer: [{
-        linkimg: "",
-        idLinkSPOTY: "",
-        idLinkDRIVE: "",
-        urlLinkWEB: "",
-        urlLinkDOWNLOAD: "",
-        categories: "",
-        info: "",
-        connectionId: "",
-        title: "",
-        genre: "",
-        artist: "",
-        idLinkYT: "",
-        mediaType: ""
-    }],
-    categoryList: ["Sello Arruinados", 'Música', 'Estudio "La Ruina Records"', "En vivo", "App y descargables", "Literatura", "Series"],
 
-    /*----------------Tienda----------------*/
-    products: false,
-    productDetails: [{ idProduct: '', categoryProduct: '', typeProduct: '', nameMerch: '', stock: '', idImg: '' }],
-
-    /*------------Filter&Search------------*/
-    filteredMedia: [],
-    searchedMedia: [],
-    mediaFound: {},
-    mediaWithConnectionId: [],
-    /*--------------Pagination--------------*/
 
     /*----------------Player----------------*/
     urlPlayer: '',
     itemList: [],
     myPlaylists: []
 
-    /*--------------Formulario--------------*/
 }
 
 export default function rootReducer(state = initialState, action) {

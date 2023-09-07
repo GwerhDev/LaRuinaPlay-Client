@@ -1,0 +1,26 @@
+.container {
+	background: linear-gradient(168deg, rgb(0, 0, 0) 20% , #171717 120%);
+	box-shadow: 0 0 10px black;
+	padding: 10px;
+}
+
+.lateralNavigator {
+	padding: 20px;
+	padding-left: 50px;
+	padding-right: 50px;
+	border-radius: 8px;
+	background: linear-gradient(to top, #1f1f1f, #272727 98%);
+	color: rgb(209, 209, 209);
+	font-size: 20px;
+}
+
+.navItem {
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.lateralNavigator span img{
+	margin-right: 20px;
+}
+
+
