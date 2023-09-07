@@ -8,7 +8,6 @@ import Dashboard from '../../admin/Dashboard/Dashboard';
 
 import { PlayList } from '../PlayList/PlayList';
 import { Favorites } from '../Favorites/Favorites';
-import { BackButton } from '../Nav/BackButton';
 import { Subscription } from '../Subscription/Subscription';
 import { Notifications } from '../Notifications/Notifications';
 import { Configurations } from '../Configurations/Configurations';
@@ -35,8 +34,6 @@ export const OptionsCanvas = () => {
                     (option === 'subscription')?    <><Subscription/></>
                     :
                     (option === 'notifications')?   <><Notifications/></>
-                    :
-                    (option === 'configuration')?   <><BackButton/></>
                     :null
                 :null)
                 }
