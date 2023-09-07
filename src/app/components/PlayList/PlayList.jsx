@@ -6,8 +6,9 @@ import defaultImg from '../../../assets/images/png/lista-icon.png';
 import favIcon from '../../../assets/images/png/like-icon.png';
 
 export const PlayList = () => {
-  const dispatch = useDispatch()
-  const itemList = useSelector(state=>state.itemList)
+  const dispatch = useDispatch();
+  const itemList = useSelector(state=>state.itemList);
+
   useEffect(()=>{
     dispatch(getAllPlaylist)
   }, [dispatch])
@@ -39,13 +40,15 @@ export const PlayList = () => {
                   <li 
                     className={s.itemListLi}
                     key={index} >
-                    <button
-                      className={s.itemListBtn}
-                      onClick={()=>{return dispatch(getUrlPlayer(e.itemUrl))}}>
-                        <ul className={s.itemInfo}>
-                          <li>{e.itemId}</li> - <li>{e.itemName}</li> - <li>{e.itemArtist}</li> - <li><img className={s.favIcon} src={favIcon} alt='fav' height='20px' /></li>
-                        </ul>
-                    </button>
+                      <button
+                        className={s.itemListBtn}
+                        onClick={()=>{return (
+                          dispatch(getUrlPlayer(e.itemUrl))
+                        )}}>
+                          <ul className={s.itemInfo}>
+                            <li>{e.itemId}</li> - <li>{e.itemName}</li> - <li>{e.itemArtist}</li> - <li><img className={s.favIcon} src={favIcon} alt='fav' height='20px' /></li>
+                          </ul>
+                      </button>
                   </li>
                 )
               }) : null

@@ -1,8 +1,9 @@
 import s from './MyLibrary.module.css';
 import React, {useEffect} from 'react';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { lists } from '../../../assets/audio/consts';
 import { useDispatch, useSelector } from 'react-redux';
-import { getItemList, getAllPlaylist} from '../../../middlewares/redux/actions';
+import { getItemList, getAllPlaylist, resetPlaylist} from '../../../middlewares/redux/actions';
 import folderIcon from '../../../assets/images/svg/folder-icon.svg';
 
 export const MyLibrary = () => {
@@ -14,9 +15,11 @@ export const MyLibrary = () => {
   return (
     <div className={s.divPlaylistsCont}>
       <ul className={s.ulPlaylistCont}>
-        <div className={s.titlePlaylistCont}>
+        <div className={s.titlePlaylistCont} onClick={() => dispatch(resetPlaylist())}>
           <img src={folderIcon} alt="my library" width={30}/>
-          <p className={s.titlePlaylist}>Mis Listas</p>
+          <Link to="/playlist">
+            <p className={s.titlePlaylist}>Mis Listas</p>
+          </Link>
         </div>
         <div className={s.divPlaylistsNames}>
           <ul className={s.ulPlaylistsNames}>  
@@ -27,11 +30,13 @@ export const MyLibrary = () => {
                     key={index} 
                     onClick={()=>{return dispatch(getItemList(e))}}
                     className={s.liPlaylistsNames}>
-                    <button 
-                      onClick={()=>{return dispatch(getItemList(e))}}
-                      className={s.btnPlaylistNames}>
-                      <h2 className={s.listName}>{e.title}</h2>
-                    </button>
+                      <Link to="/playlist">
+                        <button 
+                          onClick={()=>{return dispatch(getItemList(e))}}
+                          className={s.btnPlaylistNames}>
+                          <h2 className={s.listName}>{e.title}</h2>
+                        </button>
+                      </Link>
                   </li>
                 )}
               )

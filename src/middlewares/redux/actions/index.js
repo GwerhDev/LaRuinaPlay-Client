@@ -7,6 +7,7 @@ import {
     GET_ITEM_LIST,
     GET_ALL_PLAYLIST,
     GET_ALL_LIKES,
+    RESET_PLAYLIST,
     } from '../../misc';
 
 /* ---------------Player-------------- */
@@ -93,5 +94,11 @@ export function getItemList(items){
     return {
         type: GET_ITEM_LIST,
         payload: items
+    }
+}
+
+export function resetPlaylist() {
+    return {
+        type: RESET_PLAYLIST
     }
 }

@@ -1,12 +1,19 @@
 import React from "react";
-import { LateralMenu } from "../components/LateralMenu/LateralMenu";
 import { Viewer } from "../components/Viewer/Viewer";
-const Browser = () => {
+import { PlayList } from "../components/PlayList/PlayList";
+import { LateralMenu } from "../components/LateralMenu/LateralMenu";
+import { Search } from "../components/Search/Search";
 
+const Browser = (props) => {
+  const { component } = props;
   return (
     <main className="mainContainer">
       <LateralMenu/>
-      <Viewer/>
+      {
+        component === "viewer" ? <Viewer/> :
+        component === "search" ? <Search/> :
+        component === "playlist" ? <PlayList/> : null
+      }
     </main>
   );
 };

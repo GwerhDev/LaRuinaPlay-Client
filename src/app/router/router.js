@@ -21,7 +21,13 @@ function Router() {
               <Redirect to='/browser' />
             </Route>
             <Route exact path='/browser'>
-              <Browser />
+              <Browser component={"viewer"} />
+            </Route>
+            <Route exact path='/search'>
+              <Browser component={"search"} />
+            </Route>
+            <Route exact path='/playlist'>
+              <Browser component={"playlist"} />
             </Route>
             <Route exact path='/login'>
               <Login/>

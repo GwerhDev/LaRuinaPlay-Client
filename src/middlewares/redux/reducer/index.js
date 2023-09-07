@@ -3,6 +3,7 @@ import {
     RESET_URL_PLAYER,
     GET_ITEM_LIST,
     GET_ALL_PLAYLIST,
+    RESET_PLAYLIST,
 } from "../../misc";
 
 const initialState = {
@@ -15,6 +16,11 @@ const initialState = {
 export default function rootReducer(state = initialState, action) {
     switch (action.type) {
         /* ----------------------- Player ----------------------- */
+        case RESET_PLAYLIST:
+            return {
+                ...state,
+                itemList: []
+            }
         case URL_PLAYER:
             return {
                 ...state,
