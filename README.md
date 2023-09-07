@@ -1,3 +1,3 @@
-# LaRuinaTV | SoyHenry - Proyecto Final
+# LaRuinaPlay
 
 #### FrontEnd
