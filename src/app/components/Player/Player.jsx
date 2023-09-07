@@ -1,7 +1,7 @@
 import s from './Player.module.css';
 import AudioPlayer from 'react-h5-audio-player';
 
-export const PlayerList = (props) =>{
+export const Player = (props) =>{
     const {url} = props
     return (
         <div className={s.audioplayer}>
