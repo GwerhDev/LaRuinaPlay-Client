@@ -6,14 +6,24 @@ import { Search } from "../components/Search/Search";
 
 const Browser = (props) => {
   const { component } = props;
+  
+  function router() {
+    switch(component) {
+      case "viewer":
+        return <Viewer/>
+      case "search":
+        return <Search/>;
+      case "playlist":
+        return <PlayList/>;
+      default:
+        return null
+    }
+  }
+
   return (
     <main className="mainContainer">
       <LateralMenu/>
-      {
-        component === "viewer" ? <Viewer/> :
-        component === "search" ? <Search/> :
-        component === "playlist" ? <PlayList/> : null
-      }
+      { router() }
     </main>
   );
 };

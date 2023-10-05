@@ -1,15 +1,13 @@
+import { URL_LARUINAHUB_LOGIN, URL_LARUINAHUB_REGISTER } from '../../../middlewares/config';
 import s from './Navigator.module.css';
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 export const Navigator = () => {
   return (
     <nav>
       <div className={s.container}>
         <ul className={s.authMenu}>
-          <Link to="/register">Regístrate</Link>
-          <Link to="/login">
-            <button className={s.loginButton}>Iniciar sesión</button>
-          </Link>
+          <a href={URL_LARUINAHUB_REGISTER}>Regístrate</a>
+          <a className={s.loginButton} href={URL_LARUINAHUB_LOGIN}>Iniciar sesión</a>
         </ul>
       </div>
     </nav>

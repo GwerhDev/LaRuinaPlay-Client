@@ -1,19 +1,20 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Switch, Route, Redirect } from 'react-router-dom';
-
 import Browser from '../pages/Browser';
-import Login from '../pages/Login';
-
 import { Player } from '../components/Player/Player';
-import { Register } from '../components/Register/Register';
+import Auth from '../pages/Auth';
 
 function Router() {
-  const url = useSelector(state=>state.urlPlayer)
+  const url = useSelector(state => state.urlPlayer);
+
   return (
     <div className="App">
       <Switch>
         <>
+          <Route path='/auth'>
+            <Auth />
+          </Route>
           <div className='playListCont'>
             <Player url={url} />
           </div>
@@ -29,12 +30,6 @@ function Router() {
             </Route>
             <Route exact path='/playlist'>
               <Browser component={"playlist"} />
-            </Route>
-            <Route exact path='/register'>
-              <Register/>
-            </Route>
-            <Route exact path='/login'>
-              <Login/>
             </Route>
           </div>
         </>

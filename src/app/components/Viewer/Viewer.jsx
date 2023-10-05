@@ -6,6 +6,7 @@ export const Viewer = () => {
       <div className="primary-container">
         <Navigator/>
         <div className="main-section">
+          
         </div> 
       </div>
     </section>
