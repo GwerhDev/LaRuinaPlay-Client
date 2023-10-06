@@ -36,7 +36,7 @@ function Router() {
             <Route exact path='/search'>
               <Browser component={"search"} />
             </Route>
-            <Route path='/playlist'>
+            <Route path='/playlist/:id'>
               <Browser component={"playlist"} />
             </Route>
             <Route exact path='/library'>

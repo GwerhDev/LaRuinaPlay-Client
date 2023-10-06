@@ -4,6 +4,7 @@ export const CURRENT_USER = 'CURRENT_USER';
 export const GET_FAVORITES = 'GET_FAVORITES';
 export const GET_USER_DATA = 'GET_USER_DATA';
 export const GET_CONTENT = 'GET_CONTENT';
+export const GET_CONTENT_DETAILS = 'GET_CONTENT_DETAILS';
 
 /* -----------------PlayLists----------------- */
 export const GET_ALL_PLAYLIST = 'GET_ALL_PLAYLIST';
