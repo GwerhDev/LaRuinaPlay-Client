@@ -30,6 +30,11 @@
   padding: .5rem;
 }
 
+.menuProfileContainer li:hover {
+  cursor: pointer;
+  background-color: #474747;
+}
+
 .separator {
   border-top: solid;
   border-width: 1px;

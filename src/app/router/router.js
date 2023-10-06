@@ -4,6 +4,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Browser from '../pages/Browser';
 import { Player } from '../components/Player/Player';
 import Auth from '../pages/Auth';
+import Login from '../pages/Login';
 
 function Router() {
   const url = useSelector(state => state.urlPlayer);
@@ -11,6 +12,9 @@ function Router() {
   return (
     <div className="App">
       <Switch>
+        <Route path='/login'>
+          <Login />
+        </Route>
         <>
           <Route path='/auth'>
             <Auth />
