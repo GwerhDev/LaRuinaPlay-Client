@@ -1,12 +1,12 @@
 import { useSelector } from 'react-redux';
-import s from './LateralMenu.module.css';
+import s from './MenuLateral.module.css';
 import React from 'react';
 import { MyLibrary } from '../MyLibrary/MyLibrary';
 import searchIcon from '../../../assets/images/svg/search-icon.svg';
 import homeIcon from '../../../assets/images/svg/home-icon.svg';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
-export const LateralMenu = () => {
+export const MenuLateral = () => {
   const currentUser = useSelector(state => state.currentUser);
 
   return (

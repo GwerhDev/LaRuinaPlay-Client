@@ -1,7 +1,7 @@
 import React from "react";
 import { Viewer } from "../components/Viewer/Viewer";
 import { PlayList } from "../components/PlayList/PlayList";
-import { LateralMenu } from "../components/LateralMenu/LateralMenu";
+import { MenuLateral } from "../components/MenuLateral/MenuLateral";
 import { Search } from "../components/Search/Search";
 
 const Browser = (props) => {
@@ -22,7 +22,7 @@ const Browser = (props) => {
 
   return (
     <main className="mainContainer">
-      <LateralMenu/>
+      <MenuLateral/>
       { router() }
     </main>
   );
