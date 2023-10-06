@@ -1,9 +1,9 @@
-const defaultValue = { 
+const defaultValue = {
     style: {
-        transform: '', 
-        opacity: '', 
-        filter: '', 
-        scale: '', 
+        transform: '',
+        opacity: '',
+        filter: '',
+        scale: '',
         overflowY: '',
         transitionDuration: '',
         transformOrigin: '',
@@ -26,4 +26,9 @@ export const $d = (e) => {
 
 export const $gId = (e) => {
     return document.getElementById(e) || defaultValue
+};
+
+export function RenderDriveImage(id) {
+    if (!id) return null;
+    return `https://drive.google.com/uc?export=view&id=${id}`;
 };

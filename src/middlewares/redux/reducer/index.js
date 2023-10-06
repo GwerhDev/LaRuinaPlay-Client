@@ -1,15 +1,17 @@
 import {
     URL_PLAYER,
     RESET_URL_PLAYER,
-    GET_ITEM_LIST,
+    GET_LIBRARY_LIST,
     GET_ALL_PLAYLIST,
     RESET_PLAYLIST,
     CURRENT_USER,
     GET_USER_DATA,
+    GET_CONTENT,
 } from "../../misc";
 
 const initialState = {
     currentUser: null,
+    content: [],
     urlPlayer: '',
     itemList: [],
     myPlaylists: []
@@ -17,6 +19,11 @@ const initialState = {
 
 export default function rootReducer(state = initialState, action) {
     switch (action.type) {
+        case GET_CONTENT:
+            return {
+                ...state,
+                content: action.payload
+            }
         case RESET_PLAYLIST:
             return {
                 ...state,
@@ -33,7 +40,7 @@ export default function rootReducer(state = initialState, action) {
                 urlPlayer: '',
                 itemList: []
             }
-        case GET_ITEM_LIST:
+        case GET_LIBRARY_LIST:
             return {
                 ...state,
                 itemList: action.payload

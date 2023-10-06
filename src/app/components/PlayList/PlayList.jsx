@@ -1,10 +1,11 @@
 import s from './PlayList.module.css';
 import React, {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUrlPlayer, getAllPlaylist} from '../../../middlewares/redux/actions';
+import { getAllPlaylist} from '../../../middlewares/redux/actions';
 import defaultImg from '../../../assets/images/png/lista-icon.png';
 import favIcon from '../../../assets/images/png/like-icon.png';
 import { Navigator } from '../Navigator/Navigator';
+import { getUrlPlayer } from '../../../middlewares/redux/actions/player';
 
 export const PlayList = () => {
   const dispatch = useDispatch();

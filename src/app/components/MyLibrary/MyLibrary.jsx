@@ -3,7 +3,7 @@ import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { lists } from '../../../assets/audio/consts';
 import { useDispatch, useSelector } from 'react-redux';
-import { getItemList, getAllPlaylist, resetPlaylist} from '../../../middlewares/redux/actions';
+import { getLibraryList, getAllPlaylist, resetPlaylist} from '../../../middlewares/redux/actions';
 import folderIcon from '../../../assets/images/svg/folder-icon.svg';
 
 export const MyLibrary = () => {
@@ -28,11 +28,11 @@ export const MyLibrary = () => {
                 return(
                   <li 
                     key={index} 
-                    onClick={()=>{return dispatch(getItemList(e))}}
+                    onClick={()=>{return dispatch(getLibraryList(e))}}
                     className={s.liPlaylistsNames}>
                       <Link to="/playlist">
                         <button 
-                          onClick={()=>{return dispatch(getItemList(e))}}
+                          onClick={()=>{return dispatch(getLibraryList(e))}}
                           className={s.btnPlaylistNames}>
                           <h2 className={s.listName}>{e.title}</h2>
                         </button>
