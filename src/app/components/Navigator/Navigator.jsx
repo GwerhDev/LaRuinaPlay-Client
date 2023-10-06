@@ -1,8 +1,9 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { URL_LARUINAHUB_LOGIN, URL_LARUINAHUB_REGISTER } from '../../../middlewares/config';
 import s from './Navigator.module.css';
 import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { getUserData } from '../../../middlewares/redux/actions/account';
+import { MenuAuth } from '../MenuAuth/MenuAuth';
+import { MenuProfile } from '../MenuProfile/MenuProfile';
 
 export const Navigator = () => {
   const dispatch = useDispatch();
@@ -17,11 +18,8 @@ export const Navigator = () => {
       <div className={s.container}>
           {
             currentUser 
-            ? null
-            : <ul className={s.authMenu}>
-                <a href={URL_LARUINAHUB_REGISTER}>Regístrate</a>
-                <a className={s.loginButton} href={URL_LARUINAHUB_LOGIN}>Iniciar sesión</a>
-              </ul>
+            ? <MenuProfile/>
+            : <MenuAuth/>
           }
       </div>
     </nav>

@@ -1,0 +1,27 @@
+.authMenu {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginButton {
+  font-size: 18px;
+  padding: 5px;
+  font-family: Bebas Neue;
+  font-weight: thin;
+  margin-left: 15px;
+  margin-right: 15px;
+  color: rgb(187, 185, 185);
+  text-shadow: 0px 0px 1px black;
+  background-color: #3f3f3f;
+  border-radius: 8px;
+  transition-duration: .4s;
+}
+
+.loginButton:hover{
+	background-color: rgb(143, 143, 143);
+	cursor: pointer;
+	color: rgb(255, 255, 255);
+	text-shadow: 0px 0px 1px rgb(0, 0, 0);
+}

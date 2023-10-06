@@ -1,0 +1,12 @@
+.profilePicContainer {
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  border: solid;
+  filter: grayscale(.3);
+}
+
+.profilePicContainer:hover {
+  cursor: pointer;
+  filter: grayscale(0)
+}

@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 import s from './LateralMenu.module.css';
 import React from 'react';
 import { MyLibrary } from '../MyLibrary/MyLibrary';
@@ -6,6 +7,8 @@ import homeIcon from '../../../assets/images/svg/home-icon.svg';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 export const LateralMenu = () => {
+  const currentUser = useSelector(state => state.currentUser);
+
   return (
     <div className={s.container}>
       <ul className={s.lateralNavigator}>
@@ -26,7 +29,11 @@ export const LateralMenu = () => {
           </div>
         </Link>
       </ul>
-      <MyLibrary/>
+      {
+        currentUser
+        ? <MyLibrary/>
+        : null
+      }
     </div>
   )
 }
