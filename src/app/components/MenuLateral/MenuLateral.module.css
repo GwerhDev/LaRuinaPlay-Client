@@ -1,15 +1,16 @@
 .container {
-	min-width: 300px;
+	min-width: 320px;
 	padding: 10px;
 	background: linear-gradient(168deg, rgb(0, 0, 0) 20% , #171717 120%);
 	box-shadow: 0 0 10px black;
 }
 
 .lateralNavigator {
+	padding: 0;
 	margin-top: 0;
 	padding: 20px;
-	padding-left: 50px;
-	padding-right: 50px;
+	padding-left: 25px;
+	padding-right: 25px;
 	border-radius: 8px;
 	background: linear-gradient(to top, #1f1f1f, #272727 98%);
 	color: rgb(209, 209, 209);

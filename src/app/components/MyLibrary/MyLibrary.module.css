@@ -52,7 +52,8 @@
 	background: linear-gradient(to top, #1f1f1f, #272727 98%);
 	box-shadow: 0px 0px 10px black;
 	border-radius: 8px;
-	padding: 10px;
+	padding-bottom: 10px;
+	padding-right: 25px;
 }
 
 .titlePlaylist {
@@ -219,7 +220,6 @@
 }
 
 .listBannerCont{
-	/* background-color: rgba(0, 255, 255, 0.271); */
 	width: 100vw;
 	height: 100vh;
 	left: -375px;
@@ -257,4 +257,10 @@
 	margin-left: 380px;
 	top: 275px;
 	overflow-y: auto;
+}
+
+.ulPlaylistCont {
+	padding: 0;
+	padding-left: 25px;
+	padding-right: 25px;
 }
