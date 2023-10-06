@@ -1,6 +1,6 @@
-import s from './Playlist.module.css';
+import s from './PlayList.module.css';
 
-export const Playlist = () => {
+export const PlayList = () => {
   return (
     <div className={s.container}>
       

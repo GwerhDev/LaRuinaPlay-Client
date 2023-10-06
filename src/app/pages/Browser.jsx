@@ -6,7 +6,7 @@ import { Search } from "../components/Search/Search";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getContent } from "../../middlewares/redux/actions/content";
-import { Playlist } from "../components/Playlist/Playlist";
+import { PlayList } from "../components/PlayList/PlayList";
 
 const Browser = (props) => {
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ const Browser = (props) => {
       case "library":
         return <Library/>;
       case "playlist":
-        return <Playlist/>;
+        return <PlayList/>;
       default:
         return null
     }
