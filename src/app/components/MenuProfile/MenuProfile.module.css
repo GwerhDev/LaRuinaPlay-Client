@@ -3,10 +3,9 @@
   height: 45px;
   border-radius: 100%;
   border: solid;
-  filter: grayscale(.3);
+  overflow: hidden;
 }
 
 .profilePicContainer:hover {
   cursor: pointer;
-  filter: grayscale(0)
 }
