@@ -7,7 +7,7 @@ import {
 } from "../../misc";
 
 const initialState = {
-    /*----------------Player----------------*/
+    currentUser: null,
     urlPlayer: '',
     itemList: [],
     myPlaylists: []
@@ -15,7 +15,6 @@ const initialState = {
 
 export default function rootReducer(state = initialState, action) {
     switch (action.type) {
-        /* ----------------------- Player ----------------------- */
         case RESET_PLAYLIST:
             return {
                 ...state,
