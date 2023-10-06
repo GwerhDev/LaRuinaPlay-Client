@@ -2,9 +2,18 @@
   font-family: Bebas Neue;
   src: url('../assets/fonts/BebasNeue.otf');
 }
-ul, li{
+
+:root {
+  --darker-blue: #1d3546;
+  --primary-blue: #407aa0;
+  --secundary-blue: #3090ad;
+}
+
+ul,
+li {
   list-style: none;
 }
+
 body {
   margin: 0;
   font-family: Bebas Neue;
@@ -19,7 +28,7 @@ body {
   list-style: none;
 }
 
-.bodyApp{
+.bodyApp {
   position: absolute;
   width: 100vw;
   min-height: 100vh;
@@ -32,25 +41,31 @@ code {
     monospace;
 }
 
-:link, :visited{
+:link,
+:visited {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.774);
 }
-:link:hover{
+
+:link:hover {
   color: white;
 }
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 100%;
   position: absolute;
 }
+
 ::-webkit-scrollbar-track {
-  background: linear-gradient(168deg, rgb(0, 0, 0) 20% , #171717 120%);
+  background: linear-gradient(168deg, rgb(0, 0, 0) 20%, #171717 120%);
 }
+
 ::-webkit-scrollbar-thumb {
   background: #fff2;
   border-radius: 1px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #fff4;
 }
