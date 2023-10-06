@@ -4,6 +4,8 @@ import {
     GET_ITEM_LIST,
     GET_ALL_PLAYLIST,
     RESET_PLAYLIST,
+    CURRENT_USER,
+    GET_USER_DATA,
 } from "../../misc";
 
 const initialState = {
@@ -41,6 +43,16 @@ export default function rootReducer(state = initialState, action) {
                 ...state,
                 myPlaylists: action.payload
             }
+        case CURRENT_USER:
+            return {
+                ...state,
+                currentUser: action.payload
+            };
+        case GET_USER_DATA:
+            return {
+                ...state,
+                currentUser: action.payload
+            };
         default:
             return { ...state };
     }

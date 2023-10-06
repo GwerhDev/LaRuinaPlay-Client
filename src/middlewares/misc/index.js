@@ -1,6 +1,8 @@
 export const DEVELOPMENT = "development";
 
 export const CURRENT_USER = 'CURRENT_USER';
+export const GET_FAVORITES = 'GET_FAVORITES';
+export const GET_USER_DATA = 'GET_USER_DATA';
 
 /* -----------------PlayLists----------------- */
 export const GET_ALL_PLAYLIST = 'GET_ALL_PLAYLIST';
