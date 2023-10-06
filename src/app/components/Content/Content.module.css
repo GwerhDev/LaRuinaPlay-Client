@@ -57,9 +57,9 @@
 .playIconContainer {
   position: absolute;
   width: 20px;
-	background: linear-gradient(to bottom, var(--primary-blue), var(--secundary-blue));
+	background: linear-gradient(to bottom, var(--primary-color), var(--secundary-color));
   border: solid;
-  border-color: rgba(255, 255, 255, 0.76);
+  border-color: var(--primary-color);
   padding: .5rem;
   border-radius: 100%;
   display: flex;
