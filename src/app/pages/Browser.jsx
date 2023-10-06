@@ -1,11 +1,12 @@
 import React from "react";
 import { Viewer } from "../components/Viewer/Viewer";
-import { PlayList } from "../components/PlayList/PlayList";
+import { Library } from "../components/Library/Library";
 import { MenuLateral } from "../components/MenuLateral/MenuLateral";
 import { Search } from "../components/Search/Search";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getContent } from "../../middlewares/redux/actions/content";
+import { Playlist } from "../components/Playlist/Playlist";
 
 const Browser = (props) => {
   const dispatch = useDispatch();
@@ -14,11 +15,13 @@ const Browser = (props) => {
   function router() {
     switch(component) {
       case "viewer":
-        return <Viewer/>
+        return <Viewer/>;
       case "search":
         return <Search/>;
+      case "library":
+        return <Library/>;
       case "playlist":
-        return <PlayList/>;
+        return <Playlist/>;
       default:
         return null
     }

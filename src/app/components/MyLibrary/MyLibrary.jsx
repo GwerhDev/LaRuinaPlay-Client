@@ -7,17 +7,19 @@ import { getLibraryList, getAllPlaylist, resetPlaylist} from '../../../middlewar
 import folderIcon from '../../../assets/images/svg/folder-icon.svg';
 
 export const MyLibrary = () => {
-  const dispatch = useDispatch()
-  const myPlaylists = useSelector(state=>state.myPlaylists)
+  const dispatch = useDispatch();
+  const myPlaylists = useSelector(state=>state.myPlaylists);
+
   useEffect(()=>{
-    dispatch(getAllPlaylist)
-  }, [dispatch])
+    dispatch(getAllPlaylist);
+  }, [dispatch]);
+  
   return (
     <div className={s.divPlaylistsCont}>
       <ul className={s.ulPlaylistCont}>
         <div className={s.titlePlaylistCont} onClick={() => dispatch(resetPlaylist())}>
           <img src={folderIcon} alt="my library" width={30}/>
-          <Link to="/playlist">
+          <Link to="/library">
             <p className={s.titlePlaylist}>Mis Listas</p>
           </Link>
         </div>
@@ -30,7 +32,7 @@ export const MyLibrary = () => {
                     key={index} 
                     onClick={()=>{return dispatch(getLibraryList(e))}}
                     className={s.liPlaylistsNames}>
-                      <Link to="/playlist">
+                      <Link to="/library">
                         <button 
                           onClick={()=>{return dispatch(getLibraryList(e))}}
                           className={s.btnPlaylistNames}>

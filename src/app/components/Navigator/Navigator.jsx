@@ -1,17 +1,10 @@
 import s from './Navigator.module.css';
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getUserData } from '../../../middlewares/redux/actions/account';
+import { useSelector } from 'react-redux';
 import { MenuAuth } from '../MenuAuth/MenuAuth';
 import { MenuProfile } from '../MenuProfile/MenuProfile';
 
 export const Navigator = () => {
-  const dispatch = useDispatch();
   const currentUser = useSelector(state => state.currentUser);
-
-  useEffect(() => {
-    dispatch(getUserData())
-  }, [dispatch]);
 
   return (
     <nav>

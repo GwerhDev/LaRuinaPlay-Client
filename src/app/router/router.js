@@ -8,6 +8,7 @@ import Login from '../pages/Login';
 
 function Router() {
   const url = useSelector(state => state.urlPlayer);
+  const currentUser = useSelector(state => state.currentUser);
 
   return (
     <div className="App">
@@ -19,9 +20,12 @@ function Router() {
           <Route path='/auth'>
             <Auth />
           </Route>
-          <div className='playListCont'>
-            <Player url={url} />
-          </div>
+          {
+            currentUser &&
+            <div className='playListCont'>
+              <Player url={url} />
+            </div>
+          }
           <div className='bodyApp'>
             <Route exact path='/'>
               <Redirect to='/browser' />
@@ -32,8 +36,11 @@ function Router() {
             <Route exact path='/search'>
               <Browser component={"search"} />
             </Route>
-            <Route exact path='/playlist'>
+            <Route path='/playlist'>
               <Browser component={"playlist"} />
+            </Route>
+            <Route exact path='/library'>
+              <Browser component={"library"} />
             </Route>
           </div>
         </>
