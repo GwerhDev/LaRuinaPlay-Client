@@ -18,7 +18,7 @@ const Content = () => {
                   <img src={e.imageSlider? RenderDriveImage(e.imageSlider) : defaulBackground} alt={e.title} height="100%"/>
                 </div>
                 <div className={s.infoContainer}>
-                  <span className={s.title}>{e.title?.lenght<20? (e.title) : (e.title.substring(0,18)+'...')} </span>
+                  <span className={s.title}>{e.title?.lenght<18? (e.title) : (e.title.substring(0,16)+'...')} </span>
                   <span className={s.artist}>{e.artist}</span>
                 </div>
               </li>
