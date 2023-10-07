@@ -1,10 +1,10 @@
 .container {
-	background: linear-gradient(168deg, rgb(0, 0, 0) 20% , #171717 120%);
+	background: linear-gradient(168deg, rgb(0, 0, 0) 20%, #171717 120%);
 	box-shadow: 0 0 10px black;
 	padding: 10px;
 }
 
-.itemListBtn{
+.itemListBtn {
 	width: 100%;
 	height: 50px;
 	background-color: transparent;
@@ -24,15 +24,17 @@
 
 }
 
-.favIcon{
+.favIcon {
 	filter: grayscale(1);
 	transition-duration: .4s;
 
 }
-.favIcon:hover{
+
+.favIcon:hover {
 	filter: grayscale(0)
 }
-.itemInfo{
+
+.itemInfo {
 	display: flex;
 	justify-content: space-around;
 }
@@ -41,6 +43,7 @@
 	background-color: #616161;
 	color: aliceblue;
 }
+
 .titlePlaylistCont {
 	color: black;
 	display: flex;
@@ -63,14 +66,14 @@
 	margin-left: 10px;
 }
 
-.divPlaylistsNames{
+.divPlaylistsNames {
 	left: 55px;
 	top: 0px;
 	width: 300px;
 	height: 100%;
 }
 
-.ulPlaylistsNames{
+.ulPlaylistsNames {
 	width: 230px;
 	height: auto;
 	top: 180px;
@@ -82,7 +85,7 @@
 	margin-bottom: 10px;
 }
 
-.btnCreateList{
+.btnCreateList {
 	border-radius: 5px;
 	color: rgb(187, 185, 185);
 	text-shadow: 0px 0px 1px black;
@@ -103,28 +106,30 @@
 	bottom: 100px;
 	left: 100px;
 }
-.btnCreateList:hover{
-	background-color: rgb(143, 143, 143);
+
+.btnCreateList:hover {
+	background-color: var(--primary-color);
 	cursor: pointer;
 	color: rgb(255, 255, 255);
 	text-shadow: 0px 0px 1px rgb(0, 0, 0);
 }
-.ulPlaylistsNames>li{
+
+.ulPlaylistsNames>li {
 	margin-bottom: 10px;
-	/* background-color: aqua; */
 	left: -20px;
 	position: relative;
 }
-.itemListCont>li{
+
+.itemListCont>li {
 	position: relative;
 	margin-top: 5px;
 	top: 150px;
 	width: 500px;
-	/* background-color: white; */
 	text-align: left;
 	margin-left: 25px;
 }
-.titleList{
+
+.titleList {
 	width: 80%;
 	margin-top: 20px;
 	margin-left: 10%;
@@ -134,7 +139,7 @@
 	text-shadow: 0px 0px 2px black;
 }
 
-.msgNoSelected{
+.msgNoSelected {
 	width: 80%;
 	margin-top: 20px;
 	margin-left: 10%;
@@ -144,11 +149,11 @@
 	text-shadow: 0px 0px 2px black;
 }
 
-.imgList{
+.imgList {
 	margin-top: 15px;
 }
 
-.titleList{
+.titleList {
 	width: 100%;
 	height: 150px;
 	margin-left: 550px;
@@ -158,27 +163,28 @@
 	text-align: left;
 }
 
-.titleList>h1{
+.titleList>h1 {
 	font-size: 40px;
 	margin-top: -40px;
 	margin-bottom: 0px;
 	font-weight: thin;
 }
 
-.titleList>h2{
+.titleList>h2 {
 	font-size: 20px;
 	margin-top: -5px;
 	margin-bottom: 0px;
 	font-weight: thin;
 }
-.titleList>h3{
+
+.titleList>h3 {
 	font-size: 15px;
 	margin-top: 0px;
 	margin-bottom: 0px;
 	font-weight: thin;
 }
 
-.ulPlaylistNames{
+.ulPlaylistNames {
 	width: 250px;
 	height: 100%;
 	left: 55px;
@@ -186,11 +192,11 @@
 	display: flex;
 }
 
-.itemListLi{
+.itemListLi {
 	z-index: 99999;
 }
 
-.btnPlaylistNames{
+.btnPlaylistNames {
 	border-radius: 5px;
 	color: rgb(187, 185, 185);
 	text-shadow: 0px 0px 1px black;
@@ -212,26 +218,28 @@
 	margin-top: -3px;
 }
 
-.btnPlaylistNames:hover{
-	background-color: rgb(143, 143, 143);
+.btnPlaylistNames:hover {
+	background-color: var(--primary-color);
 	cursor: pointer;
 	color: rgb(255, 255, 255);
 	text-shadow: 0px 0px 1px rgb(0, 0, 0);
 }
 
-.listBannerCont{
+.listBannerCont {
 	width: 100vw;
 	height: 100vh;
 	left: -375px;
 	top: 0px;
 	z-index: -1;
 }
-.cont1{
+
+.cont1 {
 	width: 100%;
 	height: 100%;
 	z-index: 1;
 }
-.cont2{
+
+.cont2 {
 	width: 100%;
 	height: 275px;
 	background: linear-gradient(to bottom, #000000cf, rgba(255, 255, 255, 0));
@@ -241,7 +249,7 @@
 	flex-direction: row;
 }
 
-.contImg{
+.contImg {
 	position: absolute;
 	width: 150px;
 	height: 150px;
@@ -250,7 +258,7 @@
 	margin-top: 100px;
 }
 
-.cont3{
+.cont3 {
 	position: relative;
 	width: 970px;
 	height: 250px;

@@ -32,7 +32,7 @@
 
 .menuProfileContainer li:hover {
   cursor: pointer;
-  background-color: #474747;
+  background-color: var(--primary-color);	
 }
 
 .separator {
