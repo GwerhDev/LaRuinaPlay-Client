@@ -27,6 +27,7 @@
 .card:hover {
   background-color: rgb(41, 41, 41);
   cursor: pointer;
+  outline: 2px solid var(--primary-color);
 }
 
 .imageContainer {

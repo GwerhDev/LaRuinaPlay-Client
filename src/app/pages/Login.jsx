@@ -6,9 +6,9 @@ const Login = () => {
   return (
     <div className={s.container}>
       <main className={s.main}>
-        Inicia sesión con:
-        <LoginGoogle/>
-        <LoginHub/>
+        <h1>Inicia sesión el La Ruina Play</h1>
+        <div className={s.buttons}><LoginGoogle/></div>
+        <div className={s.buttons}><LoginHub/></div>
       </main>
     </div>
   )

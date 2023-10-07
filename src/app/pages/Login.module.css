@@ -6,14 +6,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background: linear-gradient(to bottom, #171717, rgb(0, 0, 0));
 }
 
 .main {
   background-color: #171717;
   padding: 5rem;
-  height: 150px;
+  min-height: 150px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  border-radius: 5px;
+}
+
+.buttons {
+  padding: .5rem;
 }
