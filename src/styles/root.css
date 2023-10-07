@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,100&display=swap');
 @font-face {
   font-family: Bebas Neue;
   src: url('../assets/fonts/BebasNeue.otf');
 }
 
 :root {
-  --darker-blue: #1d3546;
+  --darker-primary-color: #0a7e27;
   --primary-color: #47b92b;
   --secundary-color: #02a72b;
 }

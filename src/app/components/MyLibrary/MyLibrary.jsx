@@ -30,19 +30,18 @@ export const MyLibrary = () => {
                 return (
                   <li
                     key={index}
-                    onClick={() => { return dispatch(getLibraryList(e)) }}
+                    onClick={() => dispatch(getLibraryList(e)) }
                     className={s.liPlaylistsNames}>
                     <Link to="/library">
                       <button
-                        onClick={() => { return dispatch(getLibraryList(e)) }}
+                        onClick={() => dispatch(getLibraryList(e)) }
                         className={s.btnPlaylistNames}>
                         <h2 className={s.listName}>{e.title}</h2>
                       </button>
                     </Link>
                   </li>
                 )
-              }
-              )
+              })
             }
             {
               myPlaylists?.map((e, index) => {
@@ -53,13 +52,11 @@ export const MyLibrary = () => {
                     </button>
                   </li>
                 )
-              }
-              )
+              })
             }
           </ul>
           <li className={s.liPlaylistsNames}>
-            <button
-              className={s.btnCreateList}>
+            <button className={s.btnCreateList}>
               <h2 className={s.title}>Crear una lista</h2>
             </button>
           </li>

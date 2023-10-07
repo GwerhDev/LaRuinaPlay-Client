@@ -1,14 +1,23 @@
-import s from './LoginHub.module.css';
-import { URL_LARUINAHUB_LOGIN } from '../../../middlewares/config';
+import s from "./LoginHub.module.css";
+import laruinahubIcon from "../../../assets/images/png/ruina-records-icon.png";
+import { URL_LARUINAHUB_LOGIN } from "../../../middlewares/config";
 
-const LoginHub = () => {
+export default function LoginLaRuinaHub() {
   return (
-    <a className={s.googleButton} href={URL_LARUINAHUB_LOGIN}>
-      <button>
-        LoginHub
-      </button>
-    </a>
-  )
+    <div className={s.container}>
+      <a className={s.button} href={URL_LARUINAHUB_LOGIN}>
+        <span className={s.spanIcon}>
+          <img
+            src={laruinahubIcon}
+            height="20px"
+            className={s.img}
+            alt=""
+          />
+        </span>
+        <span className={s.spanText}>
+          La Ruina Hub
+        </span>
+      </a>
+    </div>
+  );
 }
-
-export default LoginHub;

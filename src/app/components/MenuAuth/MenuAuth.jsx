@@ -6,7 +6,7 @@ export const MenuAuth = () => {
   return (
     <ul className={s.authMenu}>
       <a href={URL_LARUINAHUB_REGISTER}>Regístrate</a>
-      <Link className={s.loginButton} to='/login'>Iniciar sesión</Link>
+      <Link className="primary-button" to='/login'>Iniciar sesión</Link>
     </ul>
   )
 }

@@ -8,3 +8,12 @@
   align-items: center;
   background-color: black;
 }
+
+.main {
+  background-color: #171717;
+  padding: 5rem;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}

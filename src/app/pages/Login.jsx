@@ -5,9 +5,11 @@ import s from './Login.module.css';
 const Login = () => {
   return (
     <div className={s.container}>
-      Inicia sesión con:
-      <LoginGoogle/>
-      <LoginHub/>
+      <main className={s.main}>
+        Inicia sesión con:
+        <LoginGoogle/>
+        <LoginHub/>
+      </main>
     </div>
   )
 }
