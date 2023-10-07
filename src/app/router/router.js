@@ -20,12 +20,6 @@ function Router() {
           <Route path='/auth'>
             <Auth />
           </Route>
-          {
-            currentUser &&
-            <div className='playListCont'>
-              <Player url={url} />
-            </div>
-          }
           <div className='bodyApp'>
             <Route exact path='/'>
               <Redirect to='/browser' />
@@ -43,6 +37,12 @@ function Router() {
               <Browser component={"library"} />
             </Route>
           </div>
+          {
+            currentUser &&
+            <div className='playListCont'>
+              <Player url={url} />
+            </div>
+          }
         </>
       </Switch>
     </div>

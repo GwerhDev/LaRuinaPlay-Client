@@ -12,7 +12,6 @@
 
 .playListCont {
   width: 800px;
-  position: fixed;
   bottom: 1px;
   z-index: 99999999999;
 }
