@@ -27,19 +27,19 @@ export const MenuLateral = () => {
             </span>
           </Link>
         </div>
-        <Link to="/search">
-          <div className={s.navItem}>
+        <div className={s.navItem}>
+          <Link to="/search">
             <span className={s.itemName}>
               <img src={searchIcon} width={20} alt="search" />
               Buscar
             </span>
-          </div>
-        </Link>
+          </Link>
+        </div>
       </ul>
       {
         currentUser
-        ? <MyLibrary/>
-        : null
+          ? <MyLibrary />
+          : null
       }
     </div>
   )
