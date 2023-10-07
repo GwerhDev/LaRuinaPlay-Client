@@ -5,7 +5,7 @@ import { URL_API } from '../../../middlewares/config';
 const LoginGoogle = () => {
   return (
     <div className={s.googleLoginContainer}>
-      <a className={s.googleBtn} href={`${URL_API}/login-google`}>
+      <a className={s.googleBtn} href={`${URL_API}/login-google-play`}>
         <span className={s.spanIcon}>
           <img
             src={googleIcon}
