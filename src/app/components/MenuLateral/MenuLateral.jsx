@@ -7,6 +7,7 @@ import searchIcon from '../../../assets/images/svg/search-icon.svg';
 import homeIcon from '../../../assets/images/svg/home-icon.svg';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { getUserData } from '../../../middlewares/redux/actions/account';
+import { ConnectedApps } from '../ConnectedApps/ConnectedApps';
 
 export const MenuLateral = () => {
   const dispatch = useDispatch();
@@ -41,6 +42,7 @@ export const MenuLateral = () => {
           ? <MyLibrary />
           : null
       }
+      <ConnectedApps />
     </div>
   )
 }

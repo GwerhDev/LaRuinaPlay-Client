@@ -1,0 +1,9 @@
+.container {
+	background: linear-gradient(to top, #1f1f1f, #272727 98%);
+  color: white;
+  border-radius: 5px;
+}
+
+.listContainer {
+  padding: 1.5rem;
+}
