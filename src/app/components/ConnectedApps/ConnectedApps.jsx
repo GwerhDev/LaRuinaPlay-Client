@@ -7,7 +7,7 @@ export const ConnectedApps = () => {
 
   const urlMerch = 'https://merch.laruinarecords.cl/';
   const urlTv = currentUser? 'https://tv.laruinarecords.cl/#/auth?token=' + getUserToken() : 'https://play.laruinarecords.cl/';
-  const urlHub = currentUser? 'https://hub.laruinarecords.cl/#/account/settings/' + getUserToken() : 'https://hub.laruinarecords.cl/';
+  const urlHub = currentUser? 'https://hub.laruinarecords.cl/#/auth/' + getUserToken() : 'https://hub.laruinarecords.cl/';
 
   return (
     <div className={s.container}>
