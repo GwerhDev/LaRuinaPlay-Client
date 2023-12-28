@@ -5,9 +5,9 @@ import s from './ConnectedApps.module.css';
 export const ConnectedApps = () => {
   const currentUser = useSelector(state => state.currentUser);
 
-  const urlMerch = 'https://merch.laruinarecords.cl/';
-  const urlTv = currentUser? 'https://tv.laruinarecords.cl/#/auth?token=' + getUserToken() : 'https://play.laruinarecords.cl/';
-  const urlHub = currentUser? 'https://hub.laruinarecords.cl/#/auth/' + getUserToken() : 'https://hub.laruinarecords.cl/';
+  const urlMerch = 'https://merch.laruina.cl/';
+  const urlTv = currentUser? 'https://tv.laruina.cl/#/auth?token=' + getUserToken() : 'https://play.laruina.cl/';
+  const urlHub = currentUser? 'https://hub.laruina.cl/#/auth/' + getUserToken() : 'https://hub.laruina.cl/';
 
   return (
     <div className={s.container}>
