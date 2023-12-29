@@ -5,6 +5,7 @@ import Browser from '../pages/Browser';
 import { Player } from '../components/Player/Player';
 import Auth from '../pages/Auth';
 import Login from '../pages/Login';
+import { RegisterMessage } from '../components/RegisterMessage/RegisterMessage';
 
 function Router() {
   const url = useSelector(state => state.urlPlayer);
@@ -45,17 +46,7 @@ function Router() {
               </div>
               :
               <div className='message-container'>
-                <div className='register-message-container'>
-                  <div className='register-message'>
-                    <span className='col'>
-                      <p className='w-600'>REGÍSTRATE</p>
-                      <p>Disfruta de todo nuestro contenido registrándote gratuitamente.</p>
-                    </span>
-                    <span>
-                      <button className='action-button'>Registrarse</button>
-                    </span>
-                  </div>
-                </div>
+                <RegisterMessage/>
               </div>
           }
         </>
