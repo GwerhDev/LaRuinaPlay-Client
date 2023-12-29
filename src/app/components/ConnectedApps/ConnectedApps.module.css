@@ -7,3 +7,8 @@
 .listContainer {
   padding: 1.5rem;
 }
+
+.listContainer li {
+  font-family: Poppins;
+  font-size: 13px;
+}

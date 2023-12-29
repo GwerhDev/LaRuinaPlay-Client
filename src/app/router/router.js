@@ -38,10 +38,25 @@ function Router() {
             </Route>
           </div>
           {
-            currentUser &&
-            <div className='playListCont'>
-              <Player url={url} />
-            </div>
+            currentUser
+              ?
+              <div className='playListCont'>
+                <Player url={url} />
+              </div>
+              :
+              <div className='message-container'>
+                <div className='register-message-container'>
+                  <div className='register-message'>
+                    <span className='col'>
+                      <p className='w-600'>REGÍSTRATE</p>
+                      <p>Disfruta de todo nuestro contenido registrándote gratuitamente.</p>
+                    </span>
+                    <span>
+                      <button className='action-button'>Registrarse</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
           }
         </>
       </Switch>
