@@ -9,7 +9,9 @@ export const RegisterMessage = () => {
           <p>Disfruta de todo nuestro contenido registrándote gratuitamente.</p>
         </span>
         <span>
-          <a href={URL_LARUINAHUB_REGISTER}><button className='action-button'>Registrarse</button></a>
+          <a href={URL_LARUINAHUB_REGISTER}>
+            <button className='action-button'>Registrarse</button>
+          </a>
         </span>
       </div>
     </div>
