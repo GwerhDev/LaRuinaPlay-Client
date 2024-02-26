@@ -5,7 +5,6 @@ import { Navigator } from "../Navigator/Navigator"
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getContentDetails } from '../../../middlewares/redux/actions/content';
-import { RenderDriveImage } from '../../../functions';
 
 export const PlayList = () => {
   const { id } = useParams();
@@ -21,10 +20,10 @@ export const PlayList = () => {
       <div className="primary-container">
         <Navigator />
         <div className="secundary-container">
-          <div className="header-playlist" style={{ backgroundImage: `url(${RenderDriveImage(details?.imageVisor)})`}}>
+          <div className="header-playlist" style={{ backgroundImage: `url(${details?.imageVisor})`}}>
             <div className={s.headerContainer}>
               <div className={s.contImg}>
-                <img className={s.imgList} src={RenderDriveImage(details?.imageSlider)} alt="default" height='100%' />
+                <img className={s.imgList} src={details?.imageSlider} alt="default" height='100%' />
               </div>
               <div className={s.titleList}>
                 <span className={s.contentType}>{details?.contentType}</span>

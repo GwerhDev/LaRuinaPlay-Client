@@ -27,8 +27,3 @@ export const $d = (e) => {
 export const $gId = (e) => {
     return document.getElementById(e) || defaultValue
 };
-
-export function RenderDriveImage(id) {
-    if (!id) return null;
-    return `https://drive.google.com/uc?export=view&id=${id}`;
-};
