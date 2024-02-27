@@ -3,10 +3,12 @@ import { useSelector } from 'react-redux';
 import defaulBackground from '../../../assets/images/png/default-background.png';
 import playBtn from '../../../assets/images/png/ruinatv-icon-play-b.png';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom';
+import { RenderSliderImageStore } from '../../../functions';
 
 const Content = () => {
   const history = useHistory();
   const content = useSelector(state => state.content);
+  const imageStore = useSelector(state => state.imageStore);
 
   function handlePlay(e) {
     return;
@@ -25,7 +27,7 @@ const Content = () => {
             return (
               <li key={'content' + e.id} className={s.card} onClick={() => handlePlaylist(e)}>
                 <div className={s.imageContainer}>
-                  <img src={ e.imageSlider || defaulBackground} alt={e.title} height="100%" />
+                  <img src={ RenderSliderImageStore(imageStore, e.imageSlider) || defaulBackground} alt={e.title} height="100%" />
                 </div>
                 <div className={s.playIconContainer} onClick={() => handlePlay(e)}>
                   <img src={playBtn} alt="" width="100%" height="100%" />

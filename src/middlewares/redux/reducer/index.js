@@ -13,6 +13,7 @@ import {
 const initialState = {
     currentUser: null,
     content: [],
+    imageStore: [],
     details: [],
     urlPlayer: '',
     itemList: [],
@@ -24,7 +25,8 @@ export default function rootReducer(state = initialState, action) {
         case GET_CONTENT:
             return {
                 ...state,
-                content: action.payload
+                content: action.payload.mediaList,
+                imageStore: action.payload.imageStore,
             }
         case GET_CONTENT_DETAILS:
             return {
