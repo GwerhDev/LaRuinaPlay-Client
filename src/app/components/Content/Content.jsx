@@ -3,12 +3,11 @@ import { useSelector } from 'react-redux';
 import defaulBackground from '../../../assets/images/png/default-background.png';
 import playBtn from '../../../assets/images/png/ruinatv-icon-play-b.png';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom';
-import { RenderSliderImageStore } from '../../../functions';
+import { RenderImageGwerhdinary } from '../../../functions';
 
 const Content = () => {
   const history = useHistory();
   const content = useSelector(state => state.content);
-  const imageStore = useSelector(state => state.imageStore);
 
   function handlePlay(e) {
     return;
@@ -23,22 +22,32 @@ const Content = () => {
       <h1>Contenido</h1>
       <ul className={s.list}>
         {
-          content?.map((e) => {
-            return (
-              <li key={'content' + e.id} className={s.card} onClick={() => handlePlaylist(e)}>
-                <div className={s.imageContainer}>
-                  <img src={ RenderSliderImageStore(imageStore, e.imageSlider) || defaulBackground} alt={e.title} height="100%" />
-                </div>
-                <div className={s.playIconContainer} onClick={() => handlePlay(e)}>
-                  <img src={playBtn} alt="" width="100%" height="100%" />
-                </div>
-                <div className={s.infoContainer} onClick={() => handlePlaylist(e)}>
-                  <span className={s.title}>{e.title?.length < 18 ? e.title : e.title.substring(0, 16) + '...'} </span>
-                  <span className={s.artist}>{e.artist}</span>
-                </div>
-              </li>
-            )
-          })
+          content.length
+            ?
+            content?.map((e) => {
+              return (
+                <li key={'content' + e.id} className={s.card} onClick={() => handlePlaylist(e)}>
+                  <div className={s.imageContainer}>
+                    <div className={s.empty} />
+                    <img src={RenderImageGwerhdinary(e.imageSlider) || defaulBackground} alt={e.title} height="100%" />
+                  </div>
+                  <div className={s.playIconContainer} onClick={() => handlePlay(e)}>
+                    <img src={playBtn} alt="" width="100%" height="100%" />
+                  </div>
+                  <div className={s.infoContainer} onClick={() => handlePlaylist(e)}>
+                    <span className={s.title}>{e.title?.length < 18 ? e.title : e.title.substring(0, 16) + '...'} </span>
+                    <span className={s.artist}>{e.artist}</span>
+                  </div>
+                </li>
+              )
+            })
+            :
+            <>
+              <li className={s.emptyCard}></li>
+              <li className={s.emptyCard}></li>
+              <li className={s.emptyCard}></li>
+            </>
+
         }
       </ul>
     </div>

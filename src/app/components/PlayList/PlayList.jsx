@@ -20,18 +20,35 @@ export const PlayList = () => {
       <div className="primary-container">
         <Navigator />
         <div className="secundary-container">
-          <div className="header-playlist" style={{ backgroundImage: `url(${details?.imageVisor})`}}>
-            <div className={s.headerContainer}>
-              <div className={s.contImg}>
-                <img className={s.imgList} src={details?.imageSlider} alt="default" height='100%' />
+          {
+            details?.imageVisor
+              ?
+              <div className="header-playlist" style={{ backgroundImage: `url(${details?.imageVisor})` }}>
+                <div className={s.headerContainer}>
+                  <div className={s.contImg}>
+                    <img className={s.imgList} src={details?.imageSlider} alt="default" height='100%' />
+                  </div>
+                  <div className={s.titleList}>
+                    <span className={s.contentType}>{details?.contentType}</span>
+                    <span className={s.title}>{details?.title}</span>
+                    <span className={s.tracks}>{details?.items?.length ? details?.items?.length + " pistas" : null}</span>
+                  </div>
+                </div>
               </div>
-              <div className={s.titleList}>
-                <span className={s.contentType}>{details?.contentType}</span>
-                <span className={s.title}>{details?.title}</span>
-                <span className={s.tracks}>{details?.items?.length? details?.items?.length + " pistas" : null}</span>
+              :
+              <div className={s.empty}>
+                <div className={s.headerContainer}>
+                  <div className={s.contImg}>
+                    <div className={s.empty} alt="default" height='100%' />
+                  </div>
+                  <div className={s.titleList}>
+                    <span className={s.contentType}>{details?.contentType}</span>
+                    <span className={s.title}>{details?.title}</span>
+                    <span className={s.tracks}>{details?.items?.length ? details?.items?.length + " pistas" : null}</span>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
+          }
         </div>
         <div className="main-section">
 

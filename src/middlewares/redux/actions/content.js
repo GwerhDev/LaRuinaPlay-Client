@@ -31,3 +31,10 @@ export function getContentDetails(id) {
       })
   }
 }
+
+export function resetContentDetails() {
+  return {
+    type: GET_CONTENT_DETAILS,
+    payload: null
+  }
+}
