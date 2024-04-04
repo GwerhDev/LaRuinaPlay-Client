@@ -39,8 +39,10 @@
 }
 
 .separator {
-  border-top: solid;
-  border-width: 1px;
+  height: 2px;
+  width: 100%;
+  background: radial-gradient(var(--primary-color) 1%, transparent 80%);
+  background-repeat: no-repeat;
 }
 
 .showMenu {

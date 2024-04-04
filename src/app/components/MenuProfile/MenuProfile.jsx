@@ -25,7 +25,8 @@ export const MenuProfile = () => {
       <ul className={s.menuProfileContainer} id='menu-profile-list-container'>
         <li>Cuenta</li>
         <li>Perfil</li>
-        <li className={s.separator} onClick={() => logout()}>Cerrar sesión</li>
+        <div className={s.separator}></div>
+        <li onClick={() => logout()}>Cerrar sesión</li>
       </ul>
     </div>
   )
