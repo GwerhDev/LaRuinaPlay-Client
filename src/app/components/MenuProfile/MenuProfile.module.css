@@ -40,6 +40,10 @@
   text-align: center;
 }
 
+.menuProfileContainer ul img {
+  border-radius: 100%;
+}
+
 .menuProfileContainer li {
   padding: .5rem;
 }
