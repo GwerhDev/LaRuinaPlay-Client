@@ -20,7 +20,7 @@
 }
 
 .menuProfileContainer {
-  width: 150px;
+  width: 250px;
   position: absolute;
   background: linear-gradient(to top, #1f1f1f, #272727 98%);
   margin-top: 40px;
@@ -29,13 +29,24 @@
   display: none;
 }
 
+.menuProfileContainer ul {
+  margin: 0;
+  padding: 0;
+  padding: .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .menuProfileContainer li {
   padding: .5rem;
 }
 
 .menuProfileContainer li:hover {
   cursor: pointer;
-  background-color: var(--primary-color);	
+  background-color: var(--primary-color);
 }
 
 .separator {
