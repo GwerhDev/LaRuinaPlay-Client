@@ -28,8 +28,7 @@ const Content = () => {
               return (
                 <li key={'content' + e.id} className={s.card} onClick={() => handlePlaylist(e)}>
                   <div className={s.imageContainer}>
-                    <div className={s.empty} />
-                    <img src={RenderImageGwerhdinary(e.imageSlider) || defaulBackground} alt={e.title} height="100%" />
+                    <img src={RenderImageGwerhdinary(e.imageSlider) || defaulBackground} alt={e.title} />
                   </div>
                   <div className={s.playIconContainer} onClick={() => handlePlay(e)}>
                     <img src={playBtn} alt="" width="100%" height="100%" />

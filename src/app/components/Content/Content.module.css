@@ -40,6 +40,14 @@
   justify-content: center;
   border-radius: 5px;
   overflow: hidden;
+  background-color: rgb(24, 24, 24);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent); 
+  background-size: 200% 100%;
+  animation: shine 2s infinite alternate;
+}
+
+.imageContainer img {
+  width: 100%;
 }
 
 .infoContainer {
