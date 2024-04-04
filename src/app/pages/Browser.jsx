@@ -32,7 +32,7 @@ const Browser = (props) => {
   }, [dispatch]);
 
   return (
-    <main className="mainContainer">
+    <main className="main-container">
       <MenuLateral/>
       { router() }
     </main>
