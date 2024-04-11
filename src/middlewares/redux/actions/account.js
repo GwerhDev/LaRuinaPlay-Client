@@ -9,7 +9,7 @@ export function getUserData() {
       const response = await axios.get(`${URL_API}/account/my-data`, options());
       dispatch({
         type: GET_USER_DATA,
-        payload: response.data?.userData
+        payload: response.data
       });
     } catch (e) {
       console.error(e);

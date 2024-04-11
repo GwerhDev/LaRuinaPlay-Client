@@ -68,12 +68,12 @@ export default function rootReducer(state = initialState, action) {
         case CURRENT_USER:
             return {
                 ...state,
-                currentUser: action.payload
+                currentUser: action.payload.userData
             };
         case GET_USER_DATA:
             return {
                 ...state,
-                currentUser: action.payload
+                currentUser: action.payload.userData
             };
         default:
             return { ...state };

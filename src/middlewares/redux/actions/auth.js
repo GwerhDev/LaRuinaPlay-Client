@@ -9,7 +9,7 @@ export function auth(history) {
       .then(res => {
         dispatch({
           type: CURRENT_USER,
-          payload: res.data.userData
+          payload: res.data
         })
         return res.data.logged && history.push(`/browser`);
       })
