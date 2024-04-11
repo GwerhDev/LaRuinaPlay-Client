@@ -31,7 +31,7 @@ export default function rootReducer(state = initialState, action) {
         case GET_CONTENT:
             return {
                 ...state,
-                content: action.payload.mediaList,
+                content: action.payload.contentList,
                 imageStore: action.payload.imageStore,
             };
         case GET_CONTENT_DETAILS:

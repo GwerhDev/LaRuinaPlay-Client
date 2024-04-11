@@ -4,7 +4,7 @@ import { GET_CONTENT, GET_CONTENT_DETAILS } from "../../misc";
 
 export function getContent() {
   return async function (dispatch) {
-    await axios.get(`${URL_API}/media/`)
+    await axios.get(`${URL_API}/content/`)
       .then(res => {
         dispatch({
           type: GET_CONTENT,
@@ -19,7 +19,7 @@ export function getContent() {
 
 export function getContentDetails(id) {
   return async function (dispatch) {
-    await axios.get(`${URL_API}/media/${id}`)
+    await axios.get(`${URL_API}/content/${id}`)
       .then(res => {
         dispatch({
           type: GET_CONTENT_DETAILS,
