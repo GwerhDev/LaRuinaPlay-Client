@@ -25,6 +25,7 @@
   border-radius: 5px;
   transition-duration: .3s;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  position: relative;
 }
 
 .card:hover {
