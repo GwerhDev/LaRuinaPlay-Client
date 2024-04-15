@@ -1,8 +1,7 @@
 .container {
 	min-width: 300px;
-	padding: 10px;
-	background: linear-gradient(168deg, rgb(0, 0, 0) 20% , #171717 120%);
-	box-shadow: 0 0 10px black;
+	height: 100%;
+	overflow-y: auto;
 }
 
 .lateralNavigator {

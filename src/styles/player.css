@@ -1,15 +1,8 @@
 .rhap_container {
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
   line-height: 1;
   font-family: inherit;
   width: auto;
-  left: 0px;
-  margin-left: 0px;
-  right: 0px;
-  bottom: 0px;
-  position: fixed;
   padding: 10px 15px;
   background-color: #000000fc;
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
