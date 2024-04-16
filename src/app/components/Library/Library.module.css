@@ -209,6 +209,7 @@
 
 .cont3 {
 	width: 100%;
-	height: 250px;
-	overflow-y: auto;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
 }

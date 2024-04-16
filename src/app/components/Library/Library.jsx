@@ -32,25 +32,29 @@ export const Library = () => {
       </div>
       <div className={s.cont3}>
         {
-          itemList.items ? itemList.items.map((e, index) => {
-            return (
-              <li
-                className={s.itemListLi}
-                key={index} >
-                <button
-                  className={s.itemListBtn}
-                  onClick={() => {
-                    return (
-                      dispatch(getUrlPlayer(e.itemUrl))
-                    )
-                  }}>
-                  <ul className={s.itemInfo}>
-                    <li>{e.itemId}</li> - <li>{e.itemName}</li> - <li>{e.itemArtist}</li> - <li><img className={s.favIcon} src={favIcon} alt='fav' height='20px' /></li>
-                  </ul>
-                </button>
-              </li>
-            )
-          }) : null
+          itemList.items
+            ?
+            itemList.items.map((e, index) => {
+              return (
+                <li
+                  className={s.itemListLi}
+                  key={index} >
+                  <button
+                    className={s.itemListBtn}
+                    onClick={() => {
+                      return (
+                        dispatch(getUrlPlayer(e.itemUrl))
+                      )
+                    }}>
+                    <ul className={s.itemInfo}>
+                      <li>{e.itemId}</li> - <li>{e.itemName}</li> - <li>{e.itemArtist}</li> - <li><img className={s.favIcon} src={favIcon} alt='fav' height='20px' /></li>
+                    </ul>
+                  </button>
+                </li>
+              )
+            })
+            : 
+            null
         }
       </div>
     </div>
