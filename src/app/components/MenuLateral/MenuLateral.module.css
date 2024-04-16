@@ -2,30 +2,26 @@
 	min-width: 300px;
 	height: 100%;
 	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	gap: .5rem;
 }
 
 .lateralNavigator {
 	padding: 0;
 	margin-top: 0;
-	padding: 20px;
-	padding-left: 25px;
-	padding-right: 25px;
-	border-radius: 8px;
-	background: linear-gradient(to top, #1f1f1f, #272727 98%);
+	padding: 2rem;
+	border-radius: 5px;
+	background-color: #272727;
 	color: rgb(209, 209, 209);
 	font-size: 20px;
-}
-
-.navItem {
-	margin-bottom: 10px;
-	margin-top: 10px;
-}
-
-.lateralNavigator span img{
-	margin-right: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: .5rem;
 }
 
 .itemName {
 	display: flex;
 	align-items: center;
+	gap: 1rem;
 }

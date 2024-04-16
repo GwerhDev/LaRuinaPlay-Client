@@ -18,9 +18,9 @@ export const MyLibrary = () => {
     <div className={s.divPlaylistsCont}>
       <ul className={s.ulPlaylistCont}>
         <div className={s.titlePlaylistCont} onClick={() => dispatch(resetPlaylist())}>
-          <img src={folderIcon} alt="my library" width={30} />
-          <Link to="/library">
-            <p className={s.titlePlaylist}>Mis Listas</p>
+          <img src={folderIcon} alt="my library" width={20} />
+          <Link to="/library" className={s.titlePlaylist}>
+            Mis Listas
           </Link>
         </div>
         <div className={s.divPlaylistsNames}>
@@ -28,15 +28,10 @@ export const MyLibrary = () => {
             {
               lists?.map((e, index) => {
                 return (
-                  <li
-                    key={index}
-                    onClick={() => dispatch(getLibraryList(e)) }
-                    className={s.liPlaylistsNames}>
+                  <li key={index} onClick={() => dispatch(getLibraryList(e))} >
                     <Link to="/library">
-                      <button
-                        onClick={() => dispatch(getLibraryList(e)) }
-                        className={s.btnPlaylistNames}>
-                        <h2 className={s.listName}>{e.title}</h2>
+                      <button onClick={() => dispatch(getLibraryList(e))} className={s.btnPlaylistNames}>
+                        <h2>{e.title}</h2>
                       </button>
                     </Link>
                   </li>
@@ -55,11 +50,10 @@ export const MyLibrary = () => {
               })
             }
           </ul>
-          <li className={s.liPlaylistsNames}>
-            <button className={s.btnCreateList}>
-              <h2 className={s.title}>Crear una lista</h2>
-            </button>
-          </li>
+          <div className={s.separator} />
+          <button className={s.btnCreateList}>
+            <h2>Crear una lista</h2>
+          </button>
         </div>
       </ul>
     </div>

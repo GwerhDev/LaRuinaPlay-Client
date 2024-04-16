@@ -1,20 +1,37 @@
-.container {
-	background: linear-gradient(168deg, rgb(0, 0, 0) 20%, #171717 120%);
-	padding: 10px;
+.divPlaylistsCont {
+	margin: 0;
+	padding: 0;
+	background: linear-gradient(to top, #1f1f1f, #272727 98%);
+	border-radius: 5px;
+}
+
+.ulPlaylistCont {
+	padding: 2rem;
+}
+
+.titlePlaylistCont {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	color: black;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 1rem;
+}
+
+.titlePlaylist {
+	color: white;
+	text-shadow: 0px 0px 1px black;
+	font-size: 20px;
 }
 
 .itemListBtn {
 	width: 100%;
 	height: 50px;
-	margin-top: 1px;
-	margin-right: 50px;
 	font-family: Bebas Neue;
-	font-size: 15px;
+	font-size: 12px;
 	border-radius: 5px;
-	border-width: 1px;
-	border-bottom-width: .5px;
-	border-top-width: .5px;
-	background-color: #171717;
 	color: rgb(241, 241, 241);
 	transition-duration: .4s;
 	z-index: 999;
@@ -41,44 +58,28 @@
 	color: aliceblue;
 }
 
-.titlePlaylistCont {
-	color: black;
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-}
-
-.divPlaylistsCont {
-	background: linear-gradient(to top, #1f1f1f, #272727 98%);
-	border-radius: 8px;
-	padding-bottom: 10px;
-	padding-right: 25px;
-}
-
-.titlePlaylist {
-	color: white;
-	text-shadow: 0px 0px 1px black;
-	font-size: 30px;
-	margin-left: 10px;
-}
-
 .divPlaylistsNames {
-	left: 55px;
-	top: 0px;
-	width: 300px;
+	display: flex;
+	flex-direction: column;
 	height: 100%;
+	padding-left: 2rem;
+	gap: .5rem;
 }
 
 .ulPlaylistsNames {
-	width: 230px;
-	height: auto;
-	top: 180px;
-	left: 0px;
-	border-bottom: solid;
-	border-width: 1px;
-	border-color: #616161;
-	border-spacing: 10px;
-	margin-bottom: 10px;
+	text-wrap: nowrap;
+	display: flex;
+	flex-direction: column;
+	gap: .5rem;
+	padding-top: .5rem;
+	padding-bottom: .5rem;
+}
+
+.separator {
+  height: 2px;
+  width: 100%;
+  background: radial-gradient(var(--primary-color) 1%, transparent 80%);
+  background-repeat: no-repeat;
 }
 
 .btnCreateList {
@@ -108,31 +109,6 @@
 	cursor: pointer;
 	color: rgb(255, 255, 255);
 	text-shadow: 0px 0px 1px rgb(0, 0, 0);
-}
-
-.ulPlaylistsNames>li {
-	margin-bottom: 10px;
-	left: -20px;
-	position: relative;
-}
-
-.itemListCont>li {
-	position: relative;
-	margin-top: 5px;
-	top: 150px;
-	width: 500px;
-	text-align: left;
-	margin-left: 25px;
-}
-
-.titleList {
-	width: 80%;
-	margin-top: 20px;
-	margin-left: 10%;
-	text-align: center;
-	font-size: 30px;
-	color: white;
-	text-shadow: 0px 0px 2px black;
 }
 
 .msgNoSelected {
@@ -201,17 +177,14 @@
 	border: none;
 	width: 100%;
 	height: 30px;
-	position: relative;
 	display: flex;
-	flex-direction: column;
 	text-align: left;
-	justify-content: center;
-	align-items: flex-start;
+	justify-content: flex-start;
+	align-items: center;
 	font-family: Bebas Neue;
 	font-size: 10px;
 	transition-duration: .4s;
 	box-shadow: 0px 0px 3px black;
-	margin-top: -3px;
 }
 
 .btnPlaylistNames:hover {
@@ -261,10 +234,4 @@
 	margin-left: 380px;
 	top: 275px;
 	overflow-y: auto;
-}
-
-.ulPlaylistCont {
-	padding: 0;
-	padding-left: 25px;
-	padding-right: 25px;
 }
