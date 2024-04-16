@@ -7,21 +7,22 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getContent } from "../../middlewares/redux/actions/content";
 import { PlayList } from "../components/PlayList/PlayList";
+import { Navigator } from "../components/Navigator/Navigator";
 
 const Browser = (props) => {
   const dispatch = useDispatch();
   const { component } = props;
 
   function router() {
-    switch(component) {
+    switch (component) {
       case "viewer":
-        return <Viewer/>;
+        return <Viewer />;
       case "search":
-        return <Search/>;
+        return <Search />;
       case "library":
-        return <Library/>;
+        return <Library />;
       case "playlist":
-        return <PlayList/>;
+        return <PlayList />;
       default:
         return null
     }
@@ -33,8 +34,15 @@ const Browser = (props) => {
 
   return (
     <main className="main-container">
-      <MenuLateral/>
-      { router() }
+      <MenuLateral />
+      <section className="section-container">
+        <div className="primary-container">
+          <Navigator />
+          {
+            router()
+          }
+        </div>
+      </section>
     </main>
   );
 };

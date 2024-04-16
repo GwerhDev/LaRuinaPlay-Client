@@ -5,6 +5,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: .5rem;
+	padding-left: .5rem;
 }
 
 .lateralNavigator {

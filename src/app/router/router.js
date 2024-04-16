@@ -21,7 +21,7 @@ function Router() {
           <Route path='/auth'>
             <Auth />
           </Route>
-          <div className='bodyApp'>
+          <div className='body-app'>
             <Route exact path='/'>
               <Redirect to='/browser' />
             </Route>

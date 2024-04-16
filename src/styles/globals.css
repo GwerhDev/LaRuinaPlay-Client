@@ -169,6 +169,7 @@ button:hover {
 }
 
 /* -------------Auth-------------- */
+
 .section-container {
   padding: 0;
   margin: 0;
@@ -203,7 +204,7 @@ button:hover {
   border-bottom: solid;
   border-width: 1px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .main-section {
