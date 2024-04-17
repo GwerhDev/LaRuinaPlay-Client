@@ -25,6 +25,11 @@
 	filter: grayscale(0)
 }
 
+.itemListLi {
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+
 .itemInfo {
 	display: flex;
 	justify-content: space-around;
@@ -179,7 +184,6 @@
 	font-size: 10px;
 	transition-duration: .4s;
 	box-shadow: 0px 0px 3px black;
-	margin-top: -3px;
 }
 
 .btnPlaylistNames:hover {

@@ -34,12 +34,14 @@ export const MenuLateral = () => {
           Buscar
         </Link>
       </ul>
-      {
-        currentUser
-          ? <MyLibrary />
-          : null
-      }
-      <ConnectedApps />
+      <ul className={s.lateralNavigator}>
+        {
+          currentUser
+            ? <MyLibrary />
+            : null
+        }
+        <ConnectedApps />
+      </ul>
     </div>
   )
 }
