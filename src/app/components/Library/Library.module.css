@@ -33,7 +33,15 @@
 .itemInfo {
 	display: flex;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: space-between;
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+
+.itemData {
+	gap: 1rem;
+	display: flex;
+	align-items: center;
 }
 
 .itemListBtn:hover {
@@ -49,6 +57,11 @@
 	left: 55px;
 	z-index: 999;
 	top: 80px;
+}
+
+.contentArtist {
+	color: #a7a7a7;
+	font-size: smaller;
 }
 
 .divPlaylistsCont {

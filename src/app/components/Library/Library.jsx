@@ -41,19 +41,23 @@ export const Library = () => {
                   key={index} >
                   <button
                     className={s.itemListBtn}
-                    onClick={() => {
-                      return (
-                        dispatch(getUrlPlayer(e.itemUrl))
-                      )
-                    }}>
+                    onClick={() => dispatch(getUrlPlayer(e.itemUrl))}>
                     <ul className={s.itemInfo}>
-                      <li>{e.itemId}</li> - <li>{e.itemName}</li> - <li>{e.itemArtist}</li> - <li><img className={s.favIcon} src={favIcon} alt='fav' height='20px' /></li>
+                      <span className={s.itemData}>
+                        <li>{e.itemId}</li>
+                        <ul>
+                          <li className={s.contentTitle}>{e.itemName}</li>
+                          <li className={s.contentArtist}>{e.itemArtist}</li>
+                        </ul>
+                      </span>
+                      <li></li>
+                      <li><img className={s.favIcon} src={favIcon} alt='fav' height='20px' /></li>
                     </ul>
                   </button>
                 </li>
               )
             })
-            : 
+            :
             null
         }
       </div>
