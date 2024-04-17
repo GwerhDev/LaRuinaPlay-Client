@@ -203,6 +203,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  padding-bottom: 2rem;
 }
 
 .main-section {

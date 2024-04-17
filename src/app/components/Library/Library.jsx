@@ -20,13 +20,16 @@ export const Library = () => {
           <img className={s.imgList} src={defaultImg} alt="default" height='100px' />
         </div>
         <div className={s.titleList}>
-          {!itemList.title ? 'Seleccione una lista de reproducción'
-            :
-            <>
-              <h3>Lista</h3>
-              <h1>{itemList.title}</h1>
-              <h2>{itemList.items.length} items</h2>
-            </>
+          {
+            !itemList.title
+              ?
+              'Seleccione una lista de reproducción'
+              :
+              <>
+                <h3>Lista</h3>
+                <h1>{itemList.title}</h1>
+                <h2>{itemList.items.length} items</h2>
+              </>
           }
         </div>
       </div>
@@ -36,9 +39,7 @@ export const Library = () => {
             ?
             itemList.items.map((e, index) => {
               return (
-                <li
-                  className={s.itemListLi}
-                  key={index} >
+                <li className={s.itemListLi} key={index} >
                   <button
                     className={s.itemListBtn}
                     onClick={() => dispatch(getUrlPlayer(e.itemUrl))}>
