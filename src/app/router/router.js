@@ -41,7 +41,7 @@ function Router() {
           {
             currentUser
               ?
-              <div className='playListCont'>
+              <div className='player-container'>
                 <Player url={url} />
               </div>
               :

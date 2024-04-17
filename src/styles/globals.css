@@ -10,7 +10,7 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.playListCont {
+.player-container {
   z-index: 99999999999;
 }
 
@@ -248,17 +248,16 @@ button:hover {
 
 .message-container {
   display: flex;
-  position: absolute;
   bottom: 1px;
   z-index: 99999999999;
   width: 100vw;
 }
 
 .register-message-container {
-  position: relative;
   bottom: 1px;
   width: 100%;
   padding: 10px;
+  background-color: black;
 }
 
 .register-message {
