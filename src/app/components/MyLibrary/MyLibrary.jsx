@@ -1,9 +1,8 @@
 import s from './MyLibrary.module.css';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
-import { lists } from '../../../assets/audio/consts';
 import { useDispatch, useSelector } from 'react-redux';
-import { getLibraryList, resetPlaylist } from '../../../middlewares/redux/actions';
+import { resetPlaylist } from '../../../middlewares/redux/actions';
 import folderIcon from '../../../assets/images/svg/folder-icon.svg';
 import { createPlaylist, getPlaylists } from '../../../middlewares/redux/actions/playlist';
 
