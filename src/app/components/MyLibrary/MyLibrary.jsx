@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { lists } from '../../../assets/audio/consts';
 import { useDispatch, useSelector } from 'react-redux';
-import { getLibraryList, getAllPlaylist, resetPlaylist } from '../../../middlewares/redux/actions';
+import { getLibraryList, resetPlaylist } from '../../../middlewares/redux/actions';
 import folderIcon from '../../../assets/images/svg/folder-icon.svg';
-import { createPlaylist } from '../../../middlewares/redux/actions/playlist';
+import { createPlaylist, getPlaylists } from '../../../middlewares/redux/actions/playlist';
 
 export const MyLibrary = () => {
   const dispatch = useDispatch();
@@ -29,7 +29,7 @@ export const MyLibrary = () => {
   };
 
   useEffect(() => {
-    dispatch(getAllPlaylist);
+    dispatch(getPlaylists());
   }, [dispatch]);
 
   return (
@@ -44,25 +44,12 @@ export const MyLibrary = () => {
         <div className={s.divPlaylistsNames}>
           <ul className={s.ulPlaylistsNames}>
             {
-              lists?.map((e, index) => {
-                return (
-                  <li key={index} onClick={() => dispatch(getLibraryList(e))} >
-                    <Link to="/library">
-                      <button onClick={() => dispatch(getLibraryList(e))} className={s.btnPlaylistNames}>
-                        <h2>{e.title}</h2>
-                      </button>
-                    </Link>
-                  </li>
-                )
-              })
-            }
-            {
               myPlaylists?.map((e, index) => {
                 return (
                   <li key={index} className={s.liPlaylistsNames}>
-                    <button className={s.btnPlaylistNames}>
-                      <h2 className={s.title}>{e.title}</h2>
-                    </button>
+                    <Link to={`/library/${e.id}`} className={s.btnPlaylistNames}>
+                      <h2 className={s.title}>{e.name}</h2>
+                    </Link>
                   </li>
                 )
               })

@@ -1,18 +1,23 @@
 import s from './Library.module.css';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllPlaylist } from '../../../middlewares/redux/actions';
 import defaultImg from '../../../assets/images/png/lista-icon.png';
 import favIcon from '../../../assets/images/png/like-icon.png';
 import { getUrlPlayer } from '../../../middlewares/redux/actions/player';
+import { getPlaylist } from '../../../middlewares/redux/actions/playlist';
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
 export const Library = () => {
   const dispatch = useDispatch();
   const itemList = useSelector(state => state.itemList);
+  const details = useSelector(state => state.details);
+  const params = useParams();
+  const { id } = params || null;
 
   useEffect(() => {
-    dispatch(getAllPlaylist);
-  }, [dispatch])
+    dispatch(getPlaylist(id));
+  }, [dispatch, id]);
+
   return (
     <div className="secundary-container">
       <div className={s.headerContainer}>
@@ -21,14 +26,16 @@ export const Library = () => {
         </div>
         <div className={s.titleList}>
           {
-            !itemList.title
+            !details
               ?
-              'Seleccione una lista de reproducción'
+              <>
+                <h1>Seleccione una lista de reproducción</h1>
+              </>
               :
               <>
                 <h3>Lista</h3>
-                <h1>{itemList.title}</h1>
-                <h2>{itemList.items.length} items</h2>
+                <h1>{details?.name}</h1>
+                <h2>{details?.items?.length} items</h2>
               </>
           }
         </div>

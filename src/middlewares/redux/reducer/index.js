@@ -9,6 +9,7 @@ import {
     GET_CONTENT,
     GET_CONTENT_DETAILS,
     RESET_CONTENT_DETAILS,
+    GET_PLAYLIST,
 } from "../../misc";
 
 const initialState = {
@@ -23,7 +24,7 @@ const initialState = {
 
 export default function rootReducer(state = initialState, action) {
     switch (action.type) {
-        case RESET_CONTENT_DETAILS: 
+        case RESET_CONTENT_DETAILS:
             return {
                 ...state,
                 details: []
@@ -34,6 +35,13 @@ export default function rootReducer(state = initialState, action) {
                 content: action.payload.contentList,
                 imageStore: action.payload.imageStore,
             };
+
+        case GET_PLAYLIST:
+            return {
+                ...state,
+                details: action.payload
+            };
+            
         case GET_CONTENT_DETAILS:
             return {
                 ...state,

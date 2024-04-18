@@ -37,6 +37,9 @@ function Router() {
             <Route exact path='/library'>
               <Browser component={"library"} />
             </Route>
+            <Route path='/library/:id'>
+              <Browser component={"library"} />
+            </Route>
           </div>
           {
             currentUser
