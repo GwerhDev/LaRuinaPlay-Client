@@ -84,19 +84,16 @@
 	background-color: #3f3f3f;
 	font-weight: thin;
 	border: none;
-	width: 90px;
 	height: 30px;
 	display: flex;
-	flex-direction: column;
 	text-align: left;
 	justify-content: center;
-	align-items: flex-start;
+	align-items: center;
 	font-family: Bebas Neue;
 	font-size: 10px;
 	transition-duration: .4s;
 	box-shadow: 0px 0px 3px black;
-	bottom: 100px;
-	left: 100px;
+	width: 100%;
 }
 
 .btnCreateList:hover {
@@ -142,6 +139,11 @@
 	margin-top: -5px;
 	margin-bottom: 0px;
 	font-weight: thin;
+}
+
+.buttonsContainer {
+	display: flex;
+	gap: .5rem;
 }
 
 .titleList>h3 {

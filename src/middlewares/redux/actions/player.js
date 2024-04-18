@@ -6,6 +6,7 @@ export function getUrlPlayer(url) {
     payload: url
   }
 }
+
 export function resetUrlPlayer() {
   return {
     type: RESET_URL_PLAYER
