@@ -50,3 +50,15 @@ export function createPlaylist(formData) {
     };
   };
 };
+
+export function deletePlaylist(id) {
+  return async function (dispatch) {
+    try {
+      const response = await axios.delete(`${URL_API}/subscriptor/playlist/delete/${id}`, options());
+      dispatch(getPlaylists());
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    };
+  };
+};
