@@ -1,6 +1,7 @@
+import { Player } from "../../interfaces/player";
 import {
-    URL_PLAYER,
-    RESET_URL_PLAYER,
+    SET_PLAYER,
+    RESET_PLAYER,
     GET_LIBRARY_LIST,
     GET_ALL_PLAYLIST,
     RESET_PLAYLIST,
@@ -10,6 +11,7 @@ import {
     GET_CONTENT_DETAILS,
     RESET_CONTENT_DETAILS,
     GET_PLAYLIST,
+    GET_TRACKLIST,
 } from "../../misc";
 
 const initialState = {
@@ -17,9 +19,10 @@ const initialState = {
     content: [],
     imageStore: [],
     details: [],
-    urlPlayer: '',
-    itemList: [],
-    myPlaylists: []
+    player: new Player(),
+    tracklist: [],
+    myPlaylists: [],
+    editionActive: false,
 }
 
 export default function rootReducer(state = initialState, action) {
@@ -29,6 +32,7 @@ export default function rootReducer(state = initialState, action) {
                 ...state,
                 details: []
             };
+
         case GET_CONTENT:
             return {
                 ...state,
@@ -41,48 +45,62 @@ export default function rootReducer(state = initialState, action) {
                 ...state,
                 details: action.payload
             };
-            
+
+        case GET_TRACKLIST:
+            return {
+                ...state,
+                tracklist: action.payload
+            };
+
         case GET_CONTENT_DETAILS:
             return {
                 ...state,
                 details: action.payload
             };
+
         case RESET_PLAYLIST:
             return {
                 ...state,
-                itemList: []
+                tracklist: []
             };
-        case URL_PLAYER:
+
+        case SET_PLAYER:
             return {
                 ...state,
-                urlPlayer: action.payload
+                player: action.payload
             };
-        case RESET_URL_PLAYER:
+
+        case RESET_PLAYER:
             return {
                 ...state,
-                urlPlayer: '',
-                itemList: []
+                player: new Player(),
+                tracklist: []
             };
+
         case GET_LIBRARY_LIST:
             return {
                 ...state,
-                itemList: action.payload
+                tracklist: action.payload
             };
+
         case GET_ALL_PLAYLIST:
             return {
                 ...state,
                 myPlaylists: action.payload
             };
+
         case CURRENT_USER:
             return {
                 ...state,
                 currentUser: action.payload.userData
             };
+
         case GET_USER_DATA:
             return {
                 ...state,
                 currentUser: action.payload.userData
             };
+
         default:
             return { ...state };
     }

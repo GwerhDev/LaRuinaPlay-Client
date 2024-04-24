@@ -61,6 +61,20 @@
 	animation: shine 2s infinite alternate;
 }
 
+.tracker {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.tracklist {
+	display: flex;
+	flex-direction: column;
+	gap: .3rem;
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+
 @keyframes shine {
 	0% {
 		background-position: -100%;

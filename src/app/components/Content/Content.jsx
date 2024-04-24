@@ -1,8 +1,8 @@
 import s from './Content.module.css';
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom';
 import defaulBackground from '../../../assets/images/png/default-background.png';
 import playBtn from '../../../assets/images/png/ruinatv-icon-play-b.png';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom';
 import { RenderImageGwerhdinary } from '../../../functions';
 
 const Content = () => {

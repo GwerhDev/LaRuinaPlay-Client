@@ -13,7 +13,7 @@ export function addLike(idUser, urlId) {
       })
       .catch(e => console.log(e))
   }
-}
+};
 
 export function getFavorites(userId) {
   return async function (dispatch) {
@@ -26,4 +26,4 @@ export function getFavorites(userId) {
       })
       .catch(e => console.log(e))
   }
-}
+};

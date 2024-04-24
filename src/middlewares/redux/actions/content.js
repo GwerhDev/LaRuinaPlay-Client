@@ -15,7 +15,7 @@ export function getContent() {
         console.error(e);
       })
   }
-}
+};
 
 export function getContentDetails(id) {
   return async function (dispatch) {
@@ -30,11 +30,11 @@ export function getContentDetails(id) {
         console.error(e);
       })
   }
-}
+};
 
 export function resetContentDetails() {
   return {
     type: GET_CONTENT_DETAILS,
     payload: null
   }
-}
+};

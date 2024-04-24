@@ -2,20 +2,21 @@ import s from './Library.module.css';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import defaultImg from '../../../assets/images/png/lista-icon.png';
-import favIcon from '../../../assets/images/png/like-icon.png';
-import { getUrlPlayer } from '../../../middlewares/redux/actions/player';
 import { getPlaylist } from '../../../middlewares/redux/actions/playlist';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import { getTracklist } from '../../../middlewares/redux/actions/tracklist';
+import { Track } from '../Track/Track';
 
 export const Library = () => {
   const dispatch = useDispatch();
-  const itemList = useSelector(state => state.itemList);
+  const tracklist = useSelector(state => state.tracklist);
   const details = useSelector(state => state.details);
   const params = useParams();
   const { id } = params || null;
 
   useEffect(() => {
     dispatch(getPlaylist(id));
+    dispatch(getTracklist(id));
   }, [dispatch, id]);
 
   return (
@@ -42,31 +43,13 @@ export const Library = () => {
       </div>
       <div className={s.cont3}>
         {
-          itemList.items
-            ?
-            itemList.items.map((e, index) => {
-              return (
-                <li className={s.itemListLi} key={index} >
-                  <button
-                    className={s.itemListBtn}
-                    onClick={() => dispatch(getUrlPlayer(e.itemUrl))}>
-                    <ul className={s.itemInfo}>
-                      <span className={s.itemData}>
-                        <li>{e.itemId}</li>
-                        <ul>
-                          <li className={s.contentTitle}>{e.itemName}</li>
-                          <li className={s.contentArtist}>{e.itemArtist}</li>
-                        </ul>
-                      </span>
-                      <li></li>
-                      <li><img className={s.favIcon} src={favIcon} alt='fav' height='20px' /></li>
-                    </ul>
-                  </button>
-                </li>
-              )
-            })
-            :
-            null
+          tracklist?.tracks?.map((e, index) => {
+            return (
+              <li className={s.itemListLi} key={index} >
+                <Track data={e}/>
+              </li>
+            )
+          })
         }
       </div>
     </div>

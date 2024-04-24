@@ -1,15 +1,15 @@
-import { RESET_URL_PLAYER, URL_PLAYER } from "../../misc";
+import { RESET_PLAYER, SET_PLAYER } from "../../misc";
 
-export function getUrlPlayer(url) {
+export function setPlayer(object) {
   return {
-    type: URL_PLAYER,
-    payload: url
+    type: SET_PLAYER,
+    payload: object
   }
-}
+};
 
-export function resetUrlPlayer() {
+export function resetPlayer() {
   return {
-    type: RESET_URL_PLAYER
+    type: RESET_PLAYER
   }
-}
+};
 

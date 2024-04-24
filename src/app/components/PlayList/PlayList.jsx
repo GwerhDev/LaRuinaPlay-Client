@@ -4,14 +4,21 @@ import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getContentDetails } from '../../../middlewares/redux/actions/content';
+import { AddTrack } from '../Admin/AddTrack';
+import { getTracklist } from '../../../middlewares/redux/actions/tracklist';
+import { Track } from '../Track/Track';
 
 export const PlayList = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const details = useSelector(state => state.details)
+  const details = useSelector(state => state.details);
+  const tracklist = useSelector(state => state.tracklist);
+  const currentUser = useSelector(state => state.currentUser);
+  const editionActive = useSelector(state => state.editionActive);
 
   useEffect(() => {
-    dispatch(getContentDetails(id))
+    dispatch(getContentDetails(id));
+    dispatch(getTracklist(id));
   }, [dispatch, id]);
 
   return (
@@ -45,6 +52,22 @@ export const PlayList = () => {
             </div>
           </div>
       }
+
+      <div className={s.tracker}>
+        {
+          currentUser?.role === "admin" && editionActive &&
+          <AddTrack />
+        }
+        <ul className={s.tracklist}>
+          {
+            tracklist?.tracks?.map((e, index) => (
+              <li key={index} >
+                <Track data={e} />
+              </li>
+            ))
+          }
+        </ul>
+      </div>
     </div>
   )
 }

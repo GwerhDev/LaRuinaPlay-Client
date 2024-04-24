@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: .5rem;
+}
+
+.container button {
+  border: none;
+  background-color: rgb(79, 79, 79);
+  color: white;
+  font-family: Bebas Neue;
+  padding: .2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  opacity: .8;
+  width: 150px;
+}
+
+.container button:hover {
+  opacity: 1;
+}
+
+.track {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgb(16, 16, 16);
+  gap: .2rem;
+  padding: .5rem;
+  border-radius: 5px;
+}
+
+.track ul {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: .2rem;
+}
