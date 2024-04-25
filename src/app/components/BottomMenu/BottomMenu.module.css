@@ -1,8 +1,17 @@
 .container {
-  padding: .5rem;
+  display: flex;
+  flex-direction: column;
+  background: #000;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+
+.menuContainer {
   display: flex;
   justify-content: space-around;
-  background: linear-gradient(to top, #000000cf, rgba(0, 0, 0, 0));
 }
 
 .itemMenu {

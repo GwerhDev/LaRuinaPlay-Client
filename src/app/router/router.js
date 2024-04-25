@@ -1,15 +1,11 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Auth from '../pages/Auth';
 import Login from '../pages/Login';
 import Browser from '../pages/Browser';
-import { Player } from '../components/Player/Player';
-import { RegisterMessage } from '../components/RegisterMessage/RegisterMessage';
 import { BottomMenu } from '../components/BottomMenu/BottomMenu';
 
 function Router() {
-  const currentUser = useSelector(state => state.currentUser);
 
   return (
     <div className="App">
@@ -41,13 +37,6 @@ function Router() {
               <Browser component={"library"} />
             </Route>
           </div>
-          {
-            currentUser
-              ?
-              <Player />
-              :
-              <RegisterMessage />
-          }
           <BottomMenu />
         </>
       </Switch>
