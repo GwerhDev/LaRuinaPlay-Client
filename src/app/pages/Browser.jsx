@@ -1,7 +1,6 @@
 import React from "react";
 import { Viewer } from "../components/Viewer/Viewer";
 import { Library } from "../components/Library/Library";
-import { MenuLateral } from "../components/MenuLateral/MenuLateral";
 import { Search } from "../components/Search/Search";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
@@ -37,7 +36,6 @@ const Browser = (props) => {
 
   return (
     <main className="main-container">
-      <MenuLateral />
       <section className="section-container">
         <div className="primary-container">
           <Navigator />
