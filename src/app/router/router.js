@@ -40,6 +40,7 @@ function Router() {
             <Route path='/library/:id'>
               <Browser component={"library"} />
             </Route>
+            <BottomMenu />
           </div>
           {
             currentUser
@@ -48,7 +49,6 @@ function Router() {
               :
               <RegisterMessage />
           }
-          <BottomMenu />
         </>
       </Switch>
     </div>
