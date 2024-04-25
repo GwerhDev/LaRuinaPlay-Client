@@ -9,7 +9,6 @@ import { HashRouter } from 'react-router-dom/cjs/react-router-dom.min';
 import { Provider } from 'react-redux';
 import { $gId } from './functions';
 
-
 const root = ReactDOM.createRoot($gId('root'));
 root.render(
     <Provider store={store}>

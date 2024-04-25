@@ -6,7 +6,6 @@ import Browser from '../pages/Browser';
 import { BottomMenu } from '../components/BottomMenu/BottomMenu';
 
 function Router() {
-
   return (
     <div className="App">
       <Switch>

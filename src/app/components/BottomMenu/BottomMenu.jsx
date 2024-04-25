@@ -8,11 +8,18 @@ import searchIcon from '../../../assets/images/svg/search-icon.svg';
 import folderIcon from '../../../assets/images/svg/folder-icon.svg';
 import { RegisterMessage } from '../RegisterMessage/RegisterMessage';
 import { Player } from '../Player/Player';
+import { useEffect } from 'react';
+import { getUserData } from '../../../middlewares/redux/actions/account';
 
 
 export const BottomMenu = () => {
   const dispatch = useDispatch();
   const currentUser = useSelector(state => state.currentUser);
+
+  
+  useEffect(() => {
+    dispatch(getUserData());
+  }, [dispatch]);
 
   function handleClick() {
     dispatch(resetContentDetails());
