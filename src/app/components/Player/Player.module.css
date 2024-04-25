@@ -1,5 +1,65 @@
-.audioPlayer{
-    bottom: 0;
-    border-radius: 20px;
-    
+.container {
+  border-radius: .4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(33, 31, 36, 0.907);
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.metadaContainer {
+  padding: .3rem;
+  gap: 1rem;
+  display: flex;
+}
+
+.cover {
+  border-radius: .2rem;
+  aspect-ratio: 1/1;
+}
+
+.metadata {
+  color: white;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-size: smaller;
+}
+
+.artist {
+  font-family: Poppins;
+  font-size: 9px;
+}
+
+.controllers {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.progressContainer {
+  height: 3px;
+  background-color: rgb(89, 89, 89);
+  width: 100%;
+  display: flex;
+  border-radius: .3rem;
+  overflow: hidden;
+}
+
+.progressContainer:hover {
+  cursor: pointer;
+}
+
+.progress {
+  background-color: rgb(203, 201, 197);
 }

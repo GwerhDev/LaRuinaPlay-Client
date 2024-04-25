@@ -15,8 +15,8 @@ import { getUserData } from '../../../middlewares/redux/actions/account';
 export const BottomMenu = () => {
   const dispatch = useDispatch();
   const currentUser = useSelector(state => state.currentUser);
+  const url = useSelector(state => state.player.url);
 
-  
   useEffect(() => {
     dispatch(getUserData());
   }, [dispatch]);
@@ -27,10 +27,14 @@ export const BottomMenu = () => {
 
   return (
     <div className={s.container}>
+
       {
         currentUser
           ?
-          <Player />
+          url &&
+          <span className={s.playerContainer}>
+            <Player />
+          </span>
           :
           <RegisterMessage />
       }
