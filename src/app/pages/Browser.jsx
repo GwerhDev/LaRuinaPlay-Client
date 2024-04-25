@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { getContent } from "../../middlewares/redux/actions/content";
 import { PlayList } from "../components/PlayList/PlayList";
 import { Navigator } from "../components/Navigator/Navigator";
+import { MyLibrary } from "../components/MyLibrary/MyLibrary";
 
 const Browser = (props) => {
   const dispatch = useDispatch();
@@ -19,6 +20,8 @@ const Browser = (props) => {
         return <Viewer />;
       case "search":
         return <Search />;
+      case "my-library":
+        return <MyLibrary />;
       case "library":
         return <Library />;
       case "playlist":

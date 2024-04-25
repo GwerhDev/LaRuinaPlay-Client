@@ -6,6 +6,7 @@ import Login from '../pages/Login';
 import Browser from '../pages/Browser';
 import { Player } from '../components/Player/Player';
 import { RegisterMessage } from '../components/RegisterMessage/RegisterMessage';
+import { BottomMenu } from '../components/BottomMenu/BottomMenu';
 
 function Router() {
   const currentUser = useSelector(state => state.currentUser);
@@ -34,7 +35,7 @@ function Router() {
               <Browser component={"playlist"} />
             </Route>
             <Route exact path='/library'>
-              <Browser component={"library"} />
+              <Browser component={"my-library"} />
             </Route>
             <Route path='/library/:id'>
               <Browser component={"library"} />
@@ -47,6 +48,7 @@ function Router() {
               :
               <RegisterMessage />
           }
+          <BottomMenu />
         </>
       </Switch>
     </div>

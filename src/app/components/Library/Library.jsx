@@ -27,12 +27,7 @@ export const Library = () => {
         </div>
         <div className={s.titleList}>
           {
-            !details
-              ?
-              <>
-                <h1>Seleccione una lista de reproducción</h1>
-              </>
-              :
+            details &&
               <>
                 <h3>Lista</h3>
                 <h1>{details?.name}</h1>
