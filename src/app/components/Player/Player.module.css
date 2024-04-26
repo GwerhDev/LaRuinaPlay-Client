@@ -35,11 +35,13 @@
 
 .title {
   font-size: smaller;
+  text-wrap: nowrap;
 }
 
 .artist {
   font-family: Poppins;
   font-size: 9px;
+  text-wrap: nowrap;
 }
 
 .controllers {
