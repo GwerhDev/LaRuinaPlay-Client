@@ -18,7 +18,7 @@
 
 .card {
   height: 220px;
-  padding: 1rem;
+  padding: .6rem;
   display: flex;
   flex-direction: column;
   border-radius: 5px;
