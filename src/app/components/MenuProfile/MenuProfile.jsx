@@ -2,8 +2,8 @@ import s from './MenuProfile.module.css';
 import { useSelector } from 'react-redux';
 import { logout } from '../../../middlewares/redux/actions/auth';
 import { $d } from '../../../functions';
-import defaultUserIcon from '../../../assets/images/png/user-icon.png'
 import { getUserToken } from '../../../middlewares/helpers';
+import defaultUserIcon from '../../../assets/images/svg/user-icon.svg'
 
 export const MenuProfile = () => {
   const currentUser =  useSelector(state => state.currentUser);

@@ -38,35 +38,37 @@ export const Player = () => {
     audioRef.current.currentTime = newTime;
   };
 
-
   return (
-    <div className={s.container}>
-      <audio
-        ref={audioRef}
-        onTimeUpdate={handleTimeUpdate}
-        onPlay={playAudio}
-        onPause={pauseAudio}
-      >
-        <source src={urlDefault} type="audio/mpeg" />
-      </audio>
-      <span className={s.metadaContainer}>
-        <img src={cover || defaultImage} alt="cover" className={s.cover} height={35} />
-        <ul className={s.metadata}>
-          <li className={s.title}>{title || "title"}</li>
-          <li className={s.artist}>{artist || "artist"}</li>
-        </ul>
-        <span className={s.controllers}>
-          {
-            playState ?
-              <img className={s.button} onClick={pauseAudio} src={pauseIcon} width={20} alt="play" ></img>
-              :
-              <img className={s.button} onClick={playAudio} src={playIcon} width={20} alt="play" ></img>
-          }
+    <section className={s.outterContainer}>
+      <div className={s.container}>
+        <audio
+          ref={audioRef}
+          onTimeUpdate={handleTimeUpdate}
+          onPlay={playAudio}
+          onPause={pauseAudio}
+          autoPlay
+        >
+          <source src={urlDefault} type="audio/mpeg" />
+        </audio>
+        <span className={s.metadaContainer}>
+          <img src={cover || defaultImage} alt="cover" className={s.cover} height={35} />
+          <ul className={s.metadata}>
+            <li className={s.title}>{title || "title"}</li>
+            <li className={s.artist}>{artist || "artist"}</li>
+          </ul>
+          <span className={s.controllers}>
+            {
+              playState ?
+                <img className={s.button} onClick={pauseAudio} src={pauseIcon} width={20} alt="play" ></img>
+                :
+                <img className={s.button} onClick={playAudio} src={playIcon} width={20} alt="play" ></img>
+            }
+          </span>
         </span>
-      </span>
-      <div onClick={handleProgressBarClick} className={s.progressContainer}>
-        <div className={s.progress} style={{ width: progress }} />
+        <div onClick={handleProgressBarClick} className={s.progressContainer}>
+          <div className={s.progress} style={{ width: progress }} />
+        </div>
       </div>
-    </div>
+    </section>
   )
 }

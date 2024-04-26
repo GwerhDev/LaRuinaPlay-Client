@@ -53,6 +53,8 @@ export const MyLibrary = () => {
           </button>
         </span>
       </div>
+      <div className={s.separator} />
+
       {
         currentUser &&
         <div className={s.divPlaylistsNames}>
@@ -81,7 +83,6 @@ export const MyLibrary = () => {
               })
             }
           </ul>
-          <div className={s.separator} />
         </div>
       }
     </ul>

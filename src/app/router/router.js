@@ -4,8 +4,14 @@ import Auth from '../pages/Auth';
 import Login from '../pages/Login';
 import Browser from '../pages/Browser';
 import { BottomMenu } from '../components/BottomMenu/BottomMenu';
+import { Player } from '../components/Player/Player';
+import { RegisterMessage } from '../components/RegisterMessage/RegisterMessage';
+import { useSelector } from 'react-redux';
 
 function Router() {
+  const currentUser = useSelector(state => state.currentUser);
+  const url = useSelector(state => state.player.url);
+
   return (
     <div className="App">
       <Switch>
@@ -36,7 +42,19 @@ function Router() {
               <Browser component={"library"} />
             </Route>
           </div>
-          <BottomMenu />
+          {
+            currentUser
+              ?
+              url &&
+              <span className='player-container'>
+                <Player />
+              </span>
+              :
+              <RegisterMessage />
+          }
+          <div className='user-menu'>
+            <BottomMenu />
+          </div>
         </>
       </Switch>
     </div>

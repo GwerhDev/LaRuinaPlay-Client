@@ -1,15 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  bottom: 0;
   width: 100%;
-}
-
-.playerContainer {
-  padding-left: .5rem;
-  padding-right: .5rem;
-  
 }
 
 .menuContainer {
