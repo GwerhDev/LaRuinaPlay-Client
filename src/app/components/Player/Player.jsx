@@ -9,7 +9,8 @@ import { RenderImageGwerhdinary } from '../../../functions';
 
 export const Player = () => {
   const player = useSelector(state => state.player);
-  const { title, artist, cover } = player;
+  const { tracklist, currentTrack } = player;
+  const { title, artist, cover, url } = tracklist[currentTrack];
   const [playState, setPlayState] = useState(false);
   const [progress, setProgress] = useState(0);
   const audioRef = useRef(null);
@@ -49,13 +50,13 @@ export const Player = () => {
           onPause={pauseAudio}
           autoPlay
         >
-          <source src={urlDefault} type="audio/mpeg" />
+          <source src={url || urlDefault} type="audio/mpeg" />
         </audio>
         <span className={s.metadaContainer}>
           <img src={cover ? RenderImageGwerhdinary(cover) : defaultImage} alt="cover" className={s.cover} height={35} />
           <ul className={s.metadata}>
-            <li className={s.title}>{title || "title"}</li>
-            <li className={s.artist}>{artist || "artist"}</li>
+            <li className={s.title}>{title}</li>
+            <li className={s.artist}>{artist}</li>
           </ul>
           <span className={s.controllers}>
             {

@@ -4,14 +4,8 @@ import Auth from '../pages/Auth';
 import Login from '../pages/Login';
 import Browser from '../pages/Browser';
 import { BottomMenu } from '../components/BottomMenu/BottomMenu';
-import { Player } from '../components/Player/Player';
-import { RegisterMessage } from '../components/RegisterMessage/RegisterMessage';
-import { useSelector } from 'react-redux';
 
 function Router() {
-  const currentUser = useSelector(state => state.currentUser);
-  const tracklist = useSelector(state => state.player.tracklist);
-
   return (
     <div className="App">
       <Switch>
@@ -42,19 +36,7 @@ function Router() {
               <Browser component={"album"} />
             </Route>
           </div>
-          {
-            currentUser
-              ?
-              tracklist.length
-                ?
-                <span className='player-container'>
-                  <Player />
-                </span>
-                :
-                null
-              :
-              <RegisterMessage />
-          }
+
           <div className='user-menu'>
             <BottomMenu />
           </div>

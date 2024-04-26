@@ -11,8 +11,13 @@ export const Track = (props) => {
 
   function playTrack(id) {
     const player = new Player();
-    player.tracklist = [`https://drive.google.com/uc?export=download&id=${id}`];
-    player.cover = data.cover;
+    player.show = true;
+    player.tracklist = [{
+      url: `https://drive.google.com/uc?export=download&id=${id}`,
+      title: data.title,
+      artist: data.artist,
+      cover: data.cover
+    }];
     dispatch(setPlayer(player));
   };
 
