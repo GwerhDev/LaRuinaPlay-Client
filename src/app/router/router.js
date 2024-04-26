@@ -10,7 +10,7 @@ import { useSelector } from 'react-redux';
 
 function Router() {
   const currentUser = useSelector(state => state.currentUser);
-  const url = useSelector(state => state.player.url);
+  const tracklist = useSelector(state => state.player.tracklist);
 
   return (
     <div className="App">
@@ -45,10 +45,13 @@ function Router() {
           {
             currentUser
               ?
-              url &&
-              <span className='player-container'>
-                <Player />
-              </span>
+              tracklist.length
+                ?
+                <span className='player-container'>
+                  <Player />
+                </span>
+                :
+                null
               :
               <RegisterMessage />
           }

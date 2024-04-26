@@ -4,5 +4,6 @@ export class Album {
     this.cover = '';
     this.title = '';
     this.artist = '';
+    this.tracks = [];
   }
 }

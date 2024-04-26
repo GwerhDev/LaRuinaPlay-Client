@@ -17,3 +17,14 @@ export function getAlbumByContent(id) {
     };
   };
 };
+
+export function createAlbum(formData) {
+  return async function (dispatch) {
+    try {
+      await axios.post(`${URL_API}/admin/album/create`, formData, options());
+      return (dispatch(getAlbumByContent(formData.contentId)));
+    } catch (error) {
+      console.error(error);
+    };
+  };
+};

@@ -72,7 +72,7 @@
 .playIconContainer {
   position: absolute;
   width: 20px;
-	background: linear-gradient(to bottom, var(--primary-color), var(--secundary-color));
+	background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
   border: solid;
   border-color: var(--primary-color);
   padding: .5rem;

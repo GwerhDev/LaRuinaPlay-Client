@@ -54,6 +54,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  gap: .5rem;
 }
 
 .main-section {

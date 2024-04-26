@@ -22,7 +22,7 @@ const initialState = {
     imageStore: [],
     album: new Album(),
     player: new Player(),
-    tracklist: [],
+    details: "",
     myPlaylists: [],
     editionActive: false,
 }

@@ -5,6 +5,7 @@ import defaultImage from '../../../assets/images/png/default-background.png';
 import playIcon from '../../../assets/images/svg/play-icon.svg';
 import pauseIcon from '../../../assets/images/svg/pause-icon.svg';
 import urlDefault from '../../../assets/audio/audio.mp3';
+import { RenderImageGwerhdinary } from '../../../functions';
 
 export const Player = () => {
   const player = useSelector(state => state.player);
@@ -51,7 +52,7 @@ export const Player = () => {
           <source src={urlDefault} type="audio/mpeg" />
         </audio>
         <span className={s.metadaContainer}>
-          <img src={cover || defaultImage} alt="cover" className={s.cover} height={35} />
+          <img src={cover ? RenderImageGwerhdinary(cover) : defaultImage} alt="cover" className={s.cover} height={35} />
           <ul className={s.metadata}>
             <li className={s.title}>{title || "title"}</li>
             <li className={s.artist}>{artist || "artist"}</li>

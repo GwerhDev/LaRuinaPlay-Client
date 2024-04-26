@@ -7,8 +7,6 @@
 .menuContainer {
   display: flex;
   justify-content: space-around;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 10%, #000000f0 90%);
-  background-color: rgba(0, 0, 0, 0.3);
   padding-top: .5rem;
   padding-bottom: .5rem;
 }
