@@ -14,7 +14,7 @@ const Content = () => {
   }
 
   function handlePlaylist(e) {
-    history.push('/playlist/' + e.id)
+    history.push('/album/' + e.id)
   }
 
   return (

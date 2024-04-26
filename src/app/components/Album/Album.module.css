@@ -1,6 +1,11 @@
 .itemListLi {
-	padding-left: 2rem;
-	padding-right: 2rem;
+	padding: .5rem;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.itemListLi:hover {
+	background-color: #272727;
 }
 
 .titlePlaylistCont {
@@ -11,6 +16,23 @@
 	left: 55px;
 	z-index: 999;
 	top: 80px;
+}
+
+.albumMetada {
+	display: flex;
+	flex-direction: column;
+	gap: .3rem;
+}
+
+.albumMetada p,
+.albumMetada h1,
+.albumMetada h3 {
+	margin: 0;
+}
+
+.albumMetada h3 {
+	font-family: Poppins;
+	font-size: 15px;
 }
 
 .divPlaylistsCont {

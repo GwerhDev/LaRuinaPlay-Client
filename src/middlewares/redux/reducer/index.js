@@ -1,3 +1,4 @@
+import { Album } from "../../interfaces/album";
 import { Player } from "../../interfaces/player";
 import {
     SET_PLAYER,
@@ -12,13 +13,14 @@ import {
     RESET_CONTENT_DETAILS,
     GET_PLAYLIST,
     GET_TRACKLIST,
+    GET_ALBUM,
 } from "../../misc";
 
 const initialState = {
     currentUser: null,
     content: [],
     imageStore: [],
-    details: [],
+    album: new Album(),
     player: new Player(),
     tracklist: [],
     myPlaylists: [],
@@ -30,7 +32,7 @@ export default function rootReducer(state = initialState, action) {
         case RESET_CONTENT_DETAILS:
             return {
                 ...state,
-                details: []
+                album: new Album()
             };
 
         case GET_CONTENT:
@@ -50,6 +52,12 @@ export default function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 tracklist: action.payload
+            };
+
+        case GET_ALBUM:
+            return {
+                ...state,
+                album: action.payload
             };
 
         case GET_CONTENT_DETAILS:

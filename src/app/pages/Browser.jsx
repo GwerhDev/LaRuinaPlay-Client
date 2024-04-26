@@ -1,6 +1,6 @@
 import React from "react";
 import { Viewer } from "../components/Viewer/Viewer";
-import { Library } from "../components/Library/Library";
+import { Album } from "../components/Album/Album";
 import { Search } from "../components/Search/Search";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
@@ -21,8 +21,8 @@ const Browser = (props) => {
         return <Search />;
       case "my-library":
         return <MyLibrary />;
-      case "library":
-        return <Library />;
+      case "album":
+        return <Album />;
       case "playlist":
         return <PlayList />;
       default:

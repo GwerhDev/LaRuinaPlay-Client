@@ -9,15 +9,9 @@
 	border-width: 1px;
 	border-bottom-width: .5px;
 	border-top-width: .5px;
-	background-color: #171717;
 	color: rgb(241, 241, 241);
 	transition-duration: .4s;
 	text-align: left;
-}
-
-.itemListBtn:hover {
-	background-color: var(--primary-color);
-	color: aliceblue;
 }
 
 .itemInfo {
@@ -28,6 +22,10 @@
 	padding-right: 2rem;
 }
 
+.itemInfo li:hover {
+	cursor: pointer;
+}
+
 .itemData {
 	gap: 1rem;
 	display: flex;
@@ -36,14 +34,11 @@
 
 .contentArtist {
 	color: #a7a7a7;
-	font-size: smaller;
+	font-size: 10px;
+	font-family: Poppins;
 }
 
-.favIcon {
-	filter: grayscale(1);
-	transition-duration: .4s;
-}
-
-.favIcon:hover {
-	filter: grayscale(0)
+.userButtons {
+	display: flex;
+	gap: 1rem;
 }

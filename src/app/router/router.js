@@ -38,8 +38,8 @@ function Router() {
             <Route exact path='/library'>
               <Browser component={"my-library"} />
             </Route>
-            <Route path='/library/:id'>
-              <Browser component={"library"} />
+            <Route path='/album/:id'>
+              <Browser component={"album"} />
             </Route>
           </div>
           {

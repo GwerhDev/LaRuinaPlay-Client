@@ -1,22 +1,19 @@
-import s from './Library.module.css';
-import React, { useEffect } from 'react';
+import s from './Album.module.css';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import defaultImg from '../../../assets/images/png/lista-icon.png';
-import { getPlaylist } from '../../../middlewares/redux/actions/playlist';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
-import { getTracklist } from '../../../middlewares/redux/actions/tracklist';
+import { getAlbumByContent } from '../../../middlewares/redux/actions/album';
 import { Track } from '../Track/Track';
+import defaultImg from '../../../assets/images/png/lista-icon.png';
 
-export const Library = () => {
+export const Album = () => {
   const dispatch = useDispatch();
-  const tracklist = useSelector(state => state.tracklist);
-  const details = useSelector(state => state.details);
+  const album = useSelector(state => state.album);
   const params = useParams();
   const { id } = params || null;
 
   useEffect(() => {
-    dispatch(getPlaylist(id));
-    dispatch(getTracklist(id));
+    dispatch(getAlbumByContent(id));
   }, [dispatch, id]);
 
   return (
@@ -27,18 +24,19 @@ export const Library = () => {
         </div>
         <div className={s.titleList}>
           {
-            details &&
-              <>
-                <h3>Lista</h3>
-                <h1>{details?.name}</h1>
-                <h2>{details?.items?.length} items</h2>
-              </>
+            album &&
+              <ul className={s.albumMetada}>
+                <p className='font-default'>Álbum</p>
+                <h1>{album.title} ({album.year})</h1>
+                <h3>{album.artist}</h3>
+                <p className='font-default'>{album.tracks?.length} items</p>
+              </ul>
           }
         </div>
       </div>
       <div className={s.cont3}>
         {
-          tracklist?.tracks?.map((e, index) => {
+          album?.tracks?.map((e, index) => {
             return (
               <li className={s.itemListLi} key={index} >
                 <Track data={e}/>

@@ -1,8 +1,9 @@
 import { useDispatch } from 'react-redux';
 import s from './Track.module.css';
-import { setPlayer } from '../../../middlewares/redux/actions/player';
-import favIcon from '../../../assets/images/png/like-icon.png';
 import { Player } from '../../../middlewares/interfaces/player';
+import { setPlayer } from '../../../middlewares/redux/actions/player';
+import simpleMenu from '../../../assets/images/svg/simple-menu-icon.svg';
+import addIcon from '../../../assets/images/svg/add-icon.svg';
 
 export const Track = (props) => {
   const dispatch = useDispatch();
@@ -15,18 +16,20 @@ export const Track = (props) => {
   };
 
   return (
-    <button className={s.itemListBtn} onClick={() => playTrack(data.driveIdHQ)}>
+    <span className={s.itemListBtn}>
       <ul className={s.itemInfo}>
-        <span className={s.itemData}>
+        <span className={s.itemData} onClick={() => playTrack(data.driveIdHQ)}>
           <li>{data.itemId}</li>
           <ul>
             <li>{data.title}</li>
             <li className={s.contentArtist}>{data.artist}</li>
           </ul>
         </span>
-        <li></li>
-        <li><img className={s.favIcon} src={favIcon} alt='fav' height='20px' /></li>
+        <span className={s.userButtons}>
+          <li><img src={addIcon} alt='fav' height='20px' /></li>
+          <li><img src={simpleMenu} alt='fav' height='20px' /></li>
+        </span>
       </ul>
-    </button>
+    </span>
   )
 }

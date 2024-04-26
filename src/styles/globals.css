@@ -156,3 +156,8 @@ button:hover {
 .action-button:hover {
   scale: 1.03;
 }
+
+.font-default {
+  font-family: Poppins;
+  font-size: 12px;
+}
