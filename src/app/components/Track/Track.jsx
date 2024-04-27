@@ -14,6 +14,7 @@ export const Track = (props) => {
     player.show = true;
     player.tracklist = [{
       url: `https://drive.google.com/uc?export=download&id=${id}`,
+      id: data.id,
       title: data.title,
       artist: data.artist,
       cover: data.cover

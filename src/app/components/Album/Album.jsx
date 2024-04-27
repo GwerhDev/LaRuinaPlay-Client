@@ -11,6 +11,8 @@ import playIcon from '../../../assets/images/svg/play-icon.svg';
 import shuffleIcon from '../../../assets/images/svg/shuffle-icon.svg';
 import simpleMenuIcon from '../../../assets/images/svg/simple-menu-icon.svg';
 import { createTrack } from '../../../middlewares/redux/actions/track';
+import { setPlayer } from '../../../middlewares/redux/actions/player';
+import { Player } from '../../../middlewares/interfaces/player';
 
 export const Album = () => {
   const dispatch = useDispatch();
@@ -55,6 +57,14 @@ export const Album = () => {
     setTrackDriveIdHQ("");
   };
 
+  function handlePlayAlbum() {
+    const player = new Player();
+    player.show = true;
+    player.tracklist = album.tracks;
+
+    dispatch(setPlayer(player));
+  };
+
   useEffect(() => {
     dispatch(getAlbumByContent(id));
   }, [dispatch, id]);
@@ -79,7 +89,13 @@ export const Album = () => {
                 <p className='font-default'>Álbum • {album.year}</p>
                 <h1>{album.title}</h1>
                 <h3>{album.artist}</h3>
-                <p className='font-default'>{album.tracks?.length > 1 ? album.tracks?.length + " tracks" : album.tracks?.length + " track"} </p>
+                <p className='font-default'>
+                  {
+                    album.tracks?.length === 1 
+                    ? album.tracks?.length + " pista" 
+                    : album.tracks?.length + " pistas"
+                  }
+                </p>
               </ul>
               :
               <ul className={s.adminButtons}>
@@ -117,7 +133,7 @@ export const Album = () => {
               <img src={shuffleIcon} alt="" width={20} />
             </button>
             <button>
-              <li className={s.playButton}>
+              <li className={s.playButton} onClick={handlePlayAlbum}>
                 <img src={playIcon} alt="" width={15} />
               </li>
             </button>

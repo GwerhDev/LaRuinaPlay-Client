@@ -49,6 +49,7 @@ export const Player = () => {
           onPlay={playAudio}
           onPause={pauseAudio}
           autoPlay
+          preload="auto"
         >
           <source src={url || urlDefault} type="audio/mpeg" />
         </audio>
