@@ -47,6 +47,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  overflow-x: hidden;
   gap: .5rem;
   padding-bottom: 3rem;
 }

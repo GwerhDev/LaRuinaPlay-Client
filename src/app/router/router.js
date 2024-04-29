@@ -37,7 +37,6 @@ function Router() {
               <Browser component={"album"} />
             </Route>
           </div>
-
           <div className='user-menu'>
             <BottomMenu />
           </div>

@@ -5,14 +5,15 @@ import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { createAlbum, getAlbumByContent } from '../../../middlewares/redux/actions/album';
 import { Track } from '../Track/Track';
 import { RenderImageGwerhdinary } from '../../../functions';
+import { createTrack } from '../../../middlewares/redux/actions/track';
+import { setPlayer } from '../../../middlewares/redux/actions/player';
+import { Player } from '../../../middlewares/interfaces/player';
 import defaultImg from '../../../assets/images/png/lista-icon.png';
 import addIcon from '../../../assets/images/svg/add-icon.svg';
 import playIcon from '../../../assets/images/svg/play-icon.svg';
 import shuffleIcon from '../../../assets/images/svg/shuffle-icon.svg';
+import addTrackIcon from '../../../assets/images/svg/add-track-icon.svg';
 import simpleMenuIcon from '../../../assets/images/svg/simple-menu-icon.svg';
-import { createTrack } from '../../../middlewares/redux/actions/track';
-import { setPlayer } from '../../../middlewares/redux/actions/player';
-import { Player } from '../../../middlewares/interfaces/player';
 
 export const Album = () => {
   const dispatch = useDispatch();
@@ -126,7 +127,7 @@ export const Album = () => {
             {
               currentUser?.role === 'admin' &&
               <button onClick={() => setEditionActive(true)}>
-                <img src={addIcon} alt="" width={20} />
+                <img src={addTrackIcon} alt="" width={20} />
               </button>
             }
             <button>
