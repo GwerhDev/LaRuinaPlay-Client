@@ -2,6 +2,7 @@ import axios from "axios";
 import { URL_API } from "../../config";
 import { options } from "../../helpers";
 import { GET_ALBUM } from "../../misc";
+import { Album } from "../../interfaces/album";
 
 export function getAlbumByContent(id) {
   return async function (dispatch) {
@@ -26,5 +27,12 @@ export function createAlbum(formData) {
     } catch (error) {
       console.error(error);
     };
+  };
+};
+
+export function resetAlbum() {
+  return {
+    type: GET_ALBUM,
+    payload: new Album(),
   };
 };
