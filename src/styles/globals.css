@@ -160,3 +160,9 @@ button:hover {
   font-family: Poppins;
   font-size: 12px;
 }
+
+.user-menu {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
