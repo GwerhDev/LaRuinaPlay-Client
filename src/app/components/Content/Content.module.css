@@ -13,7 +13,7 @@
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  padding-bottom: 8rem;
+  padding-bottom: 3rem;
 }
 
 .card {
