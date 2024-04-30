@@ -92,9 +92,9 @@ export const Album = () => {
                 <h3>{album.artist}</h3>
                 <p className='font-default'>
                   {
-                    album.tracks?.length === 1 
-                    ? album.tracks?.length + " pista" 
-                    : album.tracks?.length + " pistas"
+                    album.tracks?.length === 1
+                      ? album.tracks?.length + " pista"
+                      : album.tracks?.length + " pistas"
                   }
                 </p>
               </ul>
@@ -119,26 +119,32 @@ export const Album = () => {
             <button>
               <img src={addIcon} alt="" width={20} />
             </button>
+
             <button>
               <img src={simpleMenuIcon} alt="" width={20} />
             </button>
-          </span>
-          <span>
+
             {
               currentUser?.role === 'admin' &&
               <button onClick={() => setEditionActive(true)}>
                 <img src={addTrackIcon} alt="" width={20} />
               </button>
             }
-            <button>
-              <img src={shuffleIcon} alt="" width={20} />
-            </button>
-            <button>
-              <li className={s.playButton} onClick={handlePlayAlbum}>
-                <img src={playIcon} alt="" width={15} />
-              </li>
-            </button>
           </span>
+          {
+            album?.tracks?.length &&
+            <span>
+              <button>
+                <img src={shuffleIcon} alt="" width={20} />
+              </button>
+
+              <button>
+                <li className={s.playButton} onClick={handlePlayAlbum}>
+                  <img src={playIcon} alt="" width={15} />
+                </li>
+              </button>
+            </span>
+          }
         </ul>
       }
       <div className={s.cont3}>

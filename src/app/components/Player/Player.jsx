@@ -4,18 +4,29 @@ import { useSelector } from 'react-redux';
 import defaultImage from '../../../assets/images/png/default-background.png';
 import playIcon from '../../../assets/images/svg/play-icon.svg';
 import pauseIcon from '../../../assets/images/svg/pause-icon.svg';
-import urlDefault from '../../../assets/audio/audio.mp3';
 import { RenderImageGwerhdinary } from '../../../functions';
+import { streamTrack } from '../../../middlewares/redux/actions/track';
 
 export const Player = () => {
   const player = useSelector(state => state.player);
   const { tracklist, currentTrack } = player;
-  const { title, artist, cover, url } = tracklist[currentTrack];
+  const { title, artist, cover } = tracklist[currentTrack];
   const [playState, setPlayState] = useState(false);
   const [progress, setProgress] = useState(0);
   const audioRef = useRef(null);
+  const [url, setUrl] = useState(null);
+
+  const handleStreamAudio = async () => {
+    try {
+      const audioFile = await streamTrack('nombre_del_archivo.mp3');
+      setUrl(audioFile);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const playAudio = () => {
+    handleStreamAudio();
     audioRef.current.play();
     setPlayState(true);
   };
@@ -48,10 +59,10 @@ export const Player = () => {
           onTimeUpdate={handleTimeUpdate}
           onPlay={playAudio}
           onPause={pauseAudio}
-          autoPlay
+          autoPlay={true}
           preload="auto"
         >
-          <source src={url || urlDefault} type="audio/mpeg" />
+          {url && <source src={URL.createObjectURL(url)} type="audio/mpeg" />}
         </audio>
         <span className={s.metadaContainer}>
           <img src={cover ? RenderImageGwerhdinary(cover) : defaultImage} alt="cover" className={s.cover} height={35} />
