@@ -50,7 +50,7 @@ export const Player = () => {
           autoPlay
           preload="auto"
         >
-          { <source src={StreamByAudio('663541d0530bd66938ea9f40')} type="audio/mpeg" />}
+          { <source src={StreamByAudio('66355c97a67e6888c25f96dc')} type="audio/mpeg" />}
         </audio>
         <span className={s.metadaContainer}>
           <img src={cover ? StreamByImage(cover) : defaultImage} alt="cover" className={s.cover} height={35} />
