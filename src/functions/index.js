@@ -30,7 +30,12 @@ export const $gId = (e) => {
     return document.getElementById(e) || defaultValue
 };
 
-export function RenderImageGwerhdinary(id) {
+export function StreamByImage(id) {
     const url = `${URL_STREAMBY}/i/${id}`;
+    return url;
+};
+
+export function StreamByAudio(id) {
+    const url = `${URL_STREAMBY}/a/${id}`;
     return url;
 };

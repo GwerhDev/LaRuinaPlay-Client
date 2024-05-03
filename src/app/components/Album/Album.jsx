@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { createAlbum, getAlbumByContent } from '../../../middlewares/redux/actions/album';
 import { Track } from '../Track/Track';
-import { RenderImageGwerhdinary } from '../../../functions';
+import { StreamByImage } from '../../../functions';
 import { createTrack } from '../../../middlewares/redux/actions/track';
 import { setPlayer } from '../../../middlewares/redux/actions/player';
 import { Player } from '../../../middlewares/interfaces/player';
@@ -76,7 +76,7 @@ export const Album = () => {
         {
           album?.cover
             ?
-            <img className={s.cover} src={RenderImageGwerhdinary(album.cover)} alt="default" width='100px' />
+            <img className={s.cover} src={StreamByImage(album.cover)} alt="default" width='100px' />
             :
             <span className={s.contImg}>
               <img src={defaultImg} alt="default" width='100px' />

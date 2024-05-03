@@ -1,11 +1,10 @@
 import s from './Player.module.css';
-import { useRef, useState, useEffect } from 'react'; // Agregamos useEffect
+import { useRef, useState } from 'react'; // Agregamos useEffect
 import { useSelector } from 'react-redux';
 import defaultImage from '../../../assets/images/png/default-background.png';
 import playIcon from '../../../assets/images/svg/play-icon.svg';
 import pauseIcon from '../../../assets/images/svg/pause-icon.svg';
-import { RenderImageGwerhdinary } from '../../../functions';
-import { streamTrack } from '../../../middlewares/redux/actions/track';
+import { StreamByAudio, StreamByImage } from '../../../functions';
 
 export const Player = () => {
   const player = useSelector(state => state.player);
@@ -14,22 +13,6 @@ export const Player = () => {
   const [playState, setPlayState] = useState(false);
   const [progress, setProgress] = useState(0);
   const audioRef = useRef(null);
-  const [url, setUrl] = useState(null);
-
-  useEffect(() => {
-    const loadAudio = async () => {
-      try {
-        const response = await streamTrack('663541d0530bd66938ea9f40');        
-
-        setUrl(response);
-        playAudio();
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    loadAudio();
-  }, [title]);
 
   const playAudio = () => {
     audioRef.current.play();
@@ -67,10 +50,10 @@ export const Player = () => {
           autoPlay
           preload="auto"
         >
-          {url && <source src={url} type="audio/mpeg" />}
+          { <source src={StreamByAudio('663541d0530bd66938ea9f40')} type="audio/mpeg" />}
         </audio>
         <span className={s.metadaContainer}>
-          <img src={cover ? RenderImageGwerhdinary(cover) : defaultImage} alt="cover" className={s.cover} height={35} />
+          <img src={cover ? StreamByImage(cover) : defaultImage} alt="cover" className={s.cover} height={35} />
           <ul className={s.metadata}>
             <li className={s.title}>{title}</li>
             <li className={s.artist}>{artist}</li>
