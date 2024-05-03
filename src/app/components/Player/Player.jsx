@@ -1,5 +1,5 @@
 import s from './Player.module.css';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react'; // Agregamos useEffect
 import { useSelector } from 'react-redux';
 import defaultImage from '../../../assets/images/png/default-background.png';
 import playIcon from '../../../assets/images/svg/play-icon.svg';
@@ -16,17 +16,22 @@ export const Player = () => {
   const audioRef = useRef(null);
   const [url, setUrl] = useState(null);
 
-  const handleStreamAudio = async () => {
-    try {
-      const audioFile = await streamTrack('nombre_del_archivo.mp3');
-      setUrl(audioFile);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  useEffect(() => {
+    const loadAudio = async () => {
+      try {
+        const response = await streamTrack('663541d0530bd66938ea9f40');        
+
+        setUrl(response);
+        playAudio();
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    loadAudio();
+  }, [title]);
 
   const playAudio = () => {
-    handleStreamAudio();
     audioRef.current.play();
     setPlayState(true);
   };
@@ -57,12 +62,12 @@ export const Player = () => {
         <audio
           ref={audioRef}
           onTimeUpdate={handleTimeUpdate}
-          onPlay={playAudio}
-          onPause={pauseAudio}
-          autoPlay={true}
+          onPlay={() => setPlayState(true)}
+          onPause={() => setPlayState(false)}
+          autoPlay
           preload="auto"
         >
-          {url && <source src={URL.createObjectURL(url)} type="audio/mpeg" />}
+          {url && <source src={url} type="audio/mpeg" />}
         </audio>
         <span className={s.metadaContainer}>
           <img src={cover ? RenderImageGwerhdinary(cover) : defaultImage} alt="cover" className={s.cover} height={35} />
@@ -84,5 +89,5 @@ export const Player = () => {
         </div>
       </div>
     </section>
-  )
+  );
 }

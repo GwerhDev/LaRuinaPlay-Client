@@ -1,4 +1,4 @@
-import { URL_GWERHDINARY } from "../middlewares/config";
+import { URL_STREAMBY } from "../middlewares/config";
 
 const defaultValue = {
     style: {
@@ -31,6 +31,6 @@ export const $gId = (e) => {
 };
 
 export function RenderImageGwerhdinary(id) {
-    const url = `${URL_GWERHDINARY}/i/${id}`;
+    const url = `${URL_STREAMBY}/i/${id}`;
     return url;
 };

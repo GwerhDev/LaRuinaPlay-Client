@@ -17,13 +17,7 @@ export function createTrack(formData, id) {
 export async function streamTrack(id) {
   try {
     const response = await axios.get(`${URL_API}/subscriber/stream/track/${id}`, options());
-    if (!response) {
-      throw new Error('Network response was not ok');
-    }
-    
-    const blob = new Blob([response.data], { type: 'audio/mpeg' });
-    
-    return blob;
+    return response.data;
   } catch (error) {
     console.error(error);
     throw error;
