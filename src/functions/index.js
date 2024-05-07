@@ -1,4 +1,3 @@
-import axios from "axios";
 import { URL_STREAMBY } from "../middlewares/config";
 
 const defaultValue = {
@@ -34,9 +33,4 @@ export const $gId = (e) => {
 export function StreamByImage(id) {
     const url = `${URL_STREAMBY}/i/${id}`;
     return url;
-};
-
-export async function StreamByAudio(id) {
-    const response = await axios.get(`${URL_STREAMBY}/a/${id}`);
-    return response.data;
 };

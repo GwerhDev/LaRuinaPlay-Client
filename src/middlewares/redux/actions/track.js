@@ -14,3 +14,13 @@ export function createTrack(formData, id) {
   };
 };
 
+export function deleteTrack(id, contentId) {
+  return async function (dispatch) {
+    try {
+      await axios.delete(`${URL_API}/admin/track/delete/${id}`, options());
+      return (dispatch(getAlbumByContent(contentId)));
+    } catch (error) {
+      console.error(error);
+    }
+  }
+};

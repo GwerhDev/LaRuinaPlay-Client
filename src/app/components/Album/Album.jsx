@@ -177,7 +177,7 @@ export const Album = () => {
           album?.tracks?.map((e, index) => {
             return (
               <li className={s.itemListLi} key={index} >
-                <Track data={e} />
+                <Track data={e} contentId={id}/>
               </li>
             )
           })
