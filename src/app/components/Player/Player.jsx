@@ -4,14 +4,14 @@ import { useSelector } from 'react-redux';
 import defaultImage from '../../../assets/images/png/default-background.png';
 import playIcon from '../../../assets/images/svg/play-icon.svg';
 import pauseIcon from '../../../assets/images/svg/pause-icon.svg';
-import { StreamByAudio, StreamByImage } from '../../../functions';
+import { StreamByImage } from '../../../functions';
 
 export const Player = () => {
   const player = useSelector(state => state.player);
   const { tracklist, currentTrack } = player;
-  const { title, artist, cover } = tracklist[currentTrack];
-  const [playState, setPlayState] = useState(false);
+  const { title, artist, cover, url } = tracklist[currentTrack];
   const [progress, setProgress] = useState(0);
+  const [playState, setPlayState] = useState(false);
   const audioRef = useRef(null);
 
   const playAudio = () => {
@@ -50,7 +50,7 @@ export const Player = () => {
           autoPlay
           preload="auto"
         >
-          { <source src={StreamByAudio('66355c97a67e6888c25f96dc')} type="audio/mpeg" />}
+          {<source src={url} type="audio/mpeg" />}
         </audio>
         <span className={s.metadaContainer}>
           <img src={cover ? StreamByImage(cover) : defaultImage} alt="cover" className={s.cover} height={35} />
@@ -60,8 +60,9 @@ export const Player = () => {
           </ul>
           <span className={s.controllers}>
             {
-              playState ?
-                <img className={s.button} onClick={pauseAudio} src={pauseIcon} width={20} alt="play" ></img>
+              playState
+                ?
+                <img className={s.button} onClick={pauseAudio} src={pauseIcon} width={20} alt="pause" ></img>
                 :
                 <img className={s.button} onClick={playAudio} src={playIcon} width={20} alt="play" ></img>
             }
