@@ -23,29 +23,26 @@ export const Album = () => {
   const { id } = params || null;
   const [editionActive, setEditionActive] = useState(false);
   const [trackTitle, setTrackTitle] = useState("");
-  const [trackDriveIdLQ, setTrackDriveIdLQ] = useState("");
-  const [trackDriveIdHQ, setTrackDriveIdHQ] = useState("");
+  const [file, setFile] = useState(null);
 
   function handleCreateAlbum(e) {
-    e.preventDefault()
+    e.preventDefault();
     const formData = {
       year: e.target.year.value,
       contentId: id
     };
 
-    dispatch(createAlbum(formData))
+    dispatch(createAlbum(formData));
   };
 
   function handleCreateTrack(e) {
     e.preventDefault()
     const formData = {
       title: trackTitle,
-      driveIdLQ: trackDriveIdLQ,
-      driveIdHQ: trackDriveIdHQ,
       albumId: album.id
     };
 
-    dispatch(createTrack(formData, id));
+    dispatch(createTrack(formData, file, id));
     setEditionActive(false);
     handleCantelCreateTrack(e);
   };
@@ -54,8 +51,7 @@ export const Album = () => {
     e.preventDefault();
     setEditionActive(false);
     setTrackTitle("");
-    setTrackDriveIdLQ("");
-    setTrackDriveIdHQ("");
+    setFile(null);
   };
 
   function handlePlayAlbum() {
@@ -64,6 +60,11 @@ export const Album = () => {
     player.tracklist = album.tracks;
 
     dispatch(setPlayer(player));
+  };
+
+  const handleFileChange = (e) => {
+    const selectedFile = e.target.files[0];
+    setFile(selectedFile);
   };
 
   useEffect(() => {
@@ -158,12 +159,7 @@ export const Album = () => {
                   <input name='title-track' type="text" onInput={e => setTrackTitle(e.target.value)} />
                 </li>
                 <li>
-                  <label htmlFor="drive-id-lq-track">driveIdLQ</label>
-                  <input name='drive-id-lq-track' onInput={e => setTrackDriveIdLQ(e.target.value)} type="text" />
-                </li>
-                <li>
-                  <label htmlFor="drive-id-hq-track">driveIdHQ</label>
-                  <input name='drive-id-hq-track' onInput={e => setTrackDriveIdHQ(e.target.value)} type="text" />
+                  <input name='file' onInput={handleFileChange} type="file" />
                 </li>
               </ul>
               <span className={s.buttonsContainer}>

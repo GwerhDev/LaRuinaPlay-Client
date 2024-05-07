@@ -1,12 +1,14 @@
 import axios from "axios";
 import { URL_API } from "../../config";
-import { options } from "../../helpers";
+import { multipartOptions, options } from "../../helpers";
 import { getAlbumByContent } from "./album";
 
-export function createTrack(formData, id) {
+export function createTrack(formData, file, id) {
   return async function (dispatch) {
+
     try {
-      await axios.post(`${URL_API}/admin/track/create`, formData, options());
+      await axios.post(`${URL_API}/admin/track/create`, { title: formData.title, albumId: formData.albumId, file }, multipartOptions());
+
       return (dispatch(getAlbumByContent(id)));
     } catch (error) {
       console.error(error);
