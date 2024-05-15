@@ -36,7 +36,8 @@ export const Album = () => {
   };
 
   function handleCreateTrack(e) {
-    e.preventDefault()
+    e.preventDefault();
+    
     const formData = {
       title: trackTitle,
       albumId: album.id

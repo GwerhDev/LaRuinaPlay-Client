@@ -1,18 +1,32 @@
 import axios from "axios";
 import { URL_API } from "../../config";
-import { multipartOptions, options } from "../../helpers";
+import { options } from "../../helpers";
 import { getAlbumByContent } from "./album";
 
 export function createTrack(formData, file, id) {
   return async function (dispatch) {
-
     try {
-      await axios.post(`${URL_API}/admin/track/create`, { title: formData.title, albumId: formData.albumId, file }, multipartOptions());
+      const fileData = {
+        mimetype: file.type,
+        originalname: file.name
+      };
 
-      return (dispatch(getAlbumByContent(id)));
+      const response = await axios.post(
+        `${URL_API}/admin/track/create`, 
+        { title: formData.title, albumId: formData.albumId, fileData }, 
+        options()
+      );
+
+      await axios.put(response.data.presigned, file, {
+        headers: {
+          "Content-Type": file.type,
+        },
+      });
+
+      dispatch(getAlbumByContent(id));
     } catch (error) {
-      console.error(error);
-    };
+      console.error('Error creating track:', error);
+    }
   };
 };
 
