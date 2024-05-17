@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import defaultImage from '../../../assets/images/png/default-background.png';
 import playIcon from '../../../assets/images/svg/play-icon.svg';
 import pauseIcon from '../../../assets/images/svg/pause-icon.svg';
-import { StreamByImage } from '../../../functions';
 
 export const Player = () => {
   const player = useSelector(state => state.player);
@@ -53,7 +52,7 @@ export const Player = () => {
           {<source src={url} type="audio/mpeg" />}
         </audio>
         <span className={s.metadaContainer}>
-          <img src={cover ? StreamByImage(cover) : defaultImage} alt="cover" className={s.cover} height={35} />
+          <img src={cover ? cover : defaultImage} alt="cover" className={s.cover} height={35} />
           <ul className={s.metadata}>
             <li className={s.title}>{title}</li>
             <li className={s.artist}>{artist}</li>

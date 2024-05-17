@@ -317,3 +317,19 @@
 	padding-right: 2rem;
 	display: flex;
 }
+
+.coverContainer {
+	display: flex;
+	flex-direction: column;
+	width: 200px;
+	overflow: hidden;
+}
+
+.coverContainer input {
+	gap: 1rem;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #171717;
+}

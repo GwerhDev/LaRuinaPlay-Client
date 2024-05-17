@@ -30,6 +30,30 @@ export function createAlbum(formData) {
   };
 };
 
+export function updateAlbum(album, file, id) {
+  return async function (dispatch) {
+    try {
+      album.cover = {
+        mimetype: file.type,
+        originalname: file.name
+      };
+
+      const response = await axios.patch(`${URL_API}/admin/album/update`, album, options());
+
+      await axios.put(response.data.presigned.cover, file, {
+        headers: {
+          "Content-Type": file.type,
+        },
+      });
+
+      return (dispatch(getAlbumByContent(id)));
+    } catch (error) {
+      console.error(error);
+    };
+  };
+};
+
+
 export function resetAlbum() {
   return {
     type: GET_ALBUM,

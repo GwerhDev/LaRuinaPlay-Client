@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom';
 import defaulBackground from '../../../assets/images/png/default-background.png';
 import playBtn from '../../../assets/images/png/ruinatv-icon-play-b.png';
-import { StreamByImage } from '../../../functions';
 
 const Content = () => {
   const history = useHistory();
@@ -28,7 +27,7 @@ const Content = () => {
               return (
                 <li key={'content' + e.id} className={s.card} onClick={() => handlePlaylist(e)}>
                   <div className={s.imageContainer}>
-                    <img src={StreamByImage(e.imageSlider) || defaulBackground} alt={e.title} />
+                    <img src={e.imageSlider || defaulBackground} alt={e.title} />
                   </div>
                   <div className={s.playIconContainer} onClick={() => handlePlay(e)}>
                     <img src={playBtn} alt="" width="100%" height="100%" />

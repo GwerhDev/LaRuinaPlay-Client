@@ -1,5 +1,3 @@
-import { URL_STREAMBY } from "../middlewares/config";
-
 const defaultValue = {
     style: {
         transform: '',
@@ -28,9 +26,4 @@ export const $d = (e) => {
 
 export const $gId = (e) => {
     return document.getElementById(e) || defaultValue
-};
-
-export function StreamByImage(id) {
-    const url = `${URL_STREAMBY}/i/${id}`;
-    return url;
 };

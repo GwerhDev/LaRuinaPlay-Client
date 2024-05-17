@@ -2,9 +2,8 @@ import s from './Album.module.css';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
-import { createAlbum, getAlbumByContent } from '../../../middlewares/redux/actions/album';
+import { createAlbum, getAlbumByContent, updateAlbum } from '../../../middlewares/redux/actions/album';
 import { Track } from '../Track/Track';
-import { StreamByImage } from '../../../functions';
 import { createTrack } from '../../../middlewares/redux/actions/track';
 import { setPlayer } from '../../../middlewares/redux/actions/player';
 import { Player } from '../../../middlewares/interfaces/player';
@@ -37,7 +36,7 @@ export const Album = () => {
 
   function handleCreateTrack(e) {
     e.preventDefault();
-    
+
     const formData = {
       title: trackTitle,
       albumId: album.id
@@ -54,13 +53,18 @@ export const Album = () => {
     setTrackTitle("");
     setFile(null);
   };
-
+  
   function handlePlayAlbum() {
     const player = new Player();
     player.show = true;
     player.tracklist = album.tracks;
-
+    
     dispatch(setPlayer(player));
+  };
+  
+  function handleCoverInput(e) {
+    const file = e.target.files[0];
+    dispatch(updateAlbum(album, file, id));
   };
 
   const handleFileChange = (e) => {
@@ -78,7 +82,15 @@ export const Album = () => {
         {
           album?.cover
             ?
-            <img className={s.cover} src={StreamByImage(album.cover)} alt="default" width='100px' />
+            <span className={s.coverContainer}>
+              <img className={s.cover} src={album.cover} alt="default" width='100px' />
+              {
+                currentUser?.role === 'admin' &&
+                <span>
+                  <input type="file" onChange={handleCoverInput} />
+                </span>
+              }
+            </span>
             :
             <span className={s.contImg}>
               <img src={defaultImg} alt="default" width='100px' />
@@ -174,7 +186,7 @@ export const Album = () => {
           album?.tracks?.map((e, index) => {
             return (
               <li className={s.itemListLi} key={index} >
-                <Track data={e} contentId={id}/>
+                <Track data={e} contentId={id} />
               </li>
             )
           })
