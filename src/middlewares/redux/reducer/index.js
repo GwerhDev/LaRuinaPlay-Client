@@ -14,6 +14,7 @@ import {
     GET_PLAYLIST,
     GET_TRACKLIST,
     GET_ALBUM,
+    SET_CURRENT_TRACK,
 } from "../../misc";
 
 const initialState = {
@@ -83,6 +84,15 @@ export default function rootReducer(state = initialState, action) {
                 ...state,
                 player: new Player(),
                 tracklist: []
+            };
+
+        case SET_CURRENT_TRACK:
+            return {
+                ...state,
+                player: {
+                    ...state.player,
+                    currentTrack: action.payload
+                }
             };
 
         case GET_LIBRARY_LIST:

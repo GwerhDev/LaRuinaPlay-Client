@@ -1,11 +1,13 @@
 import s from './Player.module.css';
 import { useRef, useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import defaultImage from '../../../assets/images/png/default-background.png';
 import playIcon from '../../../assets/images/svg/play-icon.svg';
 import pauseIcon from '../../../assets/images/svg/pause-icon.svg';
+import { setCurrentTrack } from '../../../middlewares/redux/actions/player';
 
 export const Player = () => {
+  const dispatch = useDispatch();
   const player = useSelector(state => state.player);
   const { tracklist, currentTrack } = player;
   const { title, artist, cover, url } = tracklist[currentTrack];
@@ -49,6 +51,22 @@ export const Player = () => {
     }
   }, [audioRef.current?.currentTime]);
 
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.load();
+      audioRef.current.play();
+      setPlayState(true);
+    }
+  }, [currentTrack, url]);
+
+  const handleTrackEnd = () => {
+    if (tracklist.length > currentTrack + 1) {
+      dispatch(setCurrentTrack(currentTrack + 1));
+    } else {
+      setPlayState(false);
+    }
+  };
+
   return (
     <section className={s.outterContainer}>
       <div className={s.container}>
@@ -57,6 +75,7 @@ export const Player = () => {
           onTimeUpdate={handleTimeUpdate}
           onPlay={() => setPlayState(true)}
           onPause={() => setPlayState(false)}
+          onEnded={handleTrackEnd}
           autoPlay
           preload="auto"
         >
