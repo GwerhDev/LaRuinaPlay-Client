@@ -1,5 +1,5 @@
 import s from './Player.module.css';
-import { useRef, useState } from 'react'; // Agregamos useEffect
+import { useRef, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import defaultImage from '../../../assets/images/png/default-background.png';
 import playIcon from '../../../assets/images/svg/play-icon.svg';
@@ -12,6 +12,7 @@ export const Player = () => {
   const [progress, setProgress] = useState(0);
   const [playState, setPlayState] = useState(false);
   const audioRef = useRef(null);
+  const progressRef = useRef(null);
 
   const playAudio = () => {
     audioRef.current.play();
@@ -25,18 +26,28 @@ export const Player = () => {
 
   const handleTimeUpdate = () => {
     const currentTime = audioRef.current.currentTime;
-    const duration = audioRef.current.duration;
-    setProgress((currentTime / duration) * 100 + "%");
+    const duration = audioRef.current.duration || 1;
+    const progressPercent = (currentTime / duration) * 100;
+    setProgress(progressPercent);
+
+    progressRef.current.style.background = `linear-gradient(to right, #c7c7c7 ${progressPercent}%, #747474 ${progressPercent}%)`;
   };
 
-  const handleProgressBarClick = (e) => {
-    const progressBar = e.currentTarget;
-    const clickPosition = e.nativeEvent.offsetX;
-    const progressBarWidth = progressBar.clientWidth;
-    const clickPercentage = (clickPosition / progressBarWidth) * 100;
-    const newTime = (clickPercentage / 100) * audioRef.current.duration;
+  const handleProgressBarChange = (e) => {
+    const newTime = (e.target.value / 100) * audioRef.current.duration;
     audioRef.current.currentTime = newTime;
   };
+
+  useEffect(() => {
+    if (audioRef.current) {
+      const duration = audioRef.current.duration || 1;
+      const currentTime = audioRef.current.currentTime;
+      const progressPercent = (currentTime / duration) * 100;
+      setProgress(progressPercent);
+
+      progressRef.current.style.background = `linear-gradient(to right, #c7c7c7 ${progressPercent}%, #747474 ${progressPercent}%)`;
+    }
+  }, [audioRef.current?.currentTime]);
 
   return (
     <section className={s.outterContainer}>
@@ -49,7 +60,7 @@ export const Player = () => {
           autoPlay
           preload="auto"
         >
-          {<source src={url} type="audio/mpeg" />}
+          <source src={url} type="audio/mpeg" />
         </audio>
         <span className={s.metadaContainer}>
           <img src={cover ? cover : defaultImage} alt="cover" className={s.cover} height={35} />
@@ -60,16 +71,20 @@ export const Player = () => {
           <span className={s.controllers}>
             {
               playState
-                ?
-                <img className={s.button} onClick={pauseAudio} src={pauseIcon} width={20} alt="pause" ></img>
-                :
-                <img className={s.button} onClick={playAudio} src={playIcon} width={20} alt="play" ></img>
+                ? <img className={s.button} onClick={pauseAudio} src={pauseIcon} width={20} alt="pause" />
+                : <img className={s.button} onClick={playAudio} src={playIcon} width={20} alt="play" />
             }
           </span>
         </span>
-        <div onClick={handleProgressBarClick} className={s.progressContainer}>
-          <div className={s.progress} style={{ width: progress }} />
-        </div>
+        <input
+          type="range"
+          ref={progressRef}
+          value={progress}
+          onChange={handleProgressBarChange}
+          className={s.progressContainer}
+          min="0"
+          max="100"
+        />
       </div>
     </section>
   );
