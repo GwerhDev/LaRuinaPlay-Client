@@ -8,7 +8,7 @@ import defaultUserIcon from '../../../assets/images/svg/user-icon.svg'
 export const MenuProfile = () => {
   const currentUser =  useSelector(state => state.currentUser);
   const { profilePic, username } = currentUser || null;
-  const urlHub = currentUser? 'https://hub.laruina.cl/#/auth/' + getUserToken() : 'https://hub.laruina.cl/';
+  const urlHub = currentUser? 'https://hub.laruina.cl/auth/' + getUserToken() : 'https://hub.laruina.cl/';
 
   function showMenu() {
     $d('#menu-profile-list-container').style.display = 'block'

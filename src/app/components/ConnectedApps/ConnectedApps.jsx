@@ -6,8 +6,8 @@ export const ConnectedApps = () => {
   const currentUser = useSelector(state => state.currentUser);
 
   const urlMerch = 'https://merch.laruina.cl/';
-  const urlTv = currentUser? 'https://tv.laruina.cl/#/auth?token=' + getUserToken() : 'https://tv.laruina.cl/';
-  const urlHub = currentUser? 'https://hub.laruina.cl/#/auth/' + getUserToken() : 'https://hub.laruina.cl/';
+  const urlTv = currentUser? 'https://tv.laruina.cl/auth?token=' + getUserToken() : 'https://tv.laruina.cl/';
+  const urlHub = currentUser? 'https://hub.laruina.cl/auth/' + getUserToken() : 'https://hub.laruina.cl/';
 
   return (
     <div className={s.container}>
